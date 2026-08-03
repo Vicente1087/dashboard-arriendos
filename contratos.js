@@ -6,7 +6,7 @@
 const CONTRATOS = {
   "Carmén Sylva 2315, Dpto 507": {
     arrendatario: "Felipe Eduardo Bustos Avila",
-    aliasCuenta: "Felipe Eduardo Bustos Avila", // como aparece en la cuenta del banco al depositar
+    aliasCuenta: "FELIPE EDUARDO BUST", // como aparece en la cuenta del banco al depositar
     telefono: "+56 9 6908 3773",
     correo: "felipebustosa@gmail.com",
     vencimientoContrato: "2027-03-30",
