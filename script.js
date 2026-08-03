@@ -74,6 +74,12 @@ function pintarTabMes() {
   document.getElementById("pasado-total").textContent = formatoCLP(TAB_MES.pasado.total);
   pintarLista("pasado-pendientes", TAB_MES.pasado.pendientes);
 
+  document.getElementById("pasado-label-vs-mes-anterior").textContent = `Vs. ${nombreMes(TAB_MES.mesAntesDelPasado)}`;
+  const vsMesAnterior = formatoVariacion(TAB_MES.pasado.total, TAB_MES.totalMesAntesDelPasado);
+  const elVsMesAnterior = document.getElementById("pasado-vs-mes-anterior");
+  elVsMesAnterior.textContent = vsMesAnterior.texto;
+  elVsMesAnterior.className = `card-value ${vsMesAnterior.clase}`;
+
   const anioPasado = Math.max(...Object.keys(TAB_MES.totalesMismoMesAniosAnteriores).map(Number));
   const totalAnioPasado = TAB_MES.totalesMismoMesAniosAnteriores[anioPasado];
   const vsAnioPasado = formatoVariacion(TAB_MES.pasado.total, totalAnioPasado);
@@ -90,14 +96,11 @@ function pintarTabMes() {
 
 function pintarTabAnio() {
   const TAB_ANIO = estado.TAB_ANIO;
+
+  // Bloque: año actual (en curso, informativo)
+  document.getElementById("titulo-anio-actual").textContent = `Año actual: ${TAB_ANIO.anioActual}`;
   document.getElementById("anio-label-acumulado").textContent = `Acumulado ${TAB_ANIO.anioActual} (${TAB_ANIO.mesesIncluidos} meses)`;
   document.getElementById("anio-acumulado").textContent = formatoCLP(TAB_ANIO.acumuladoAnioActual);
-
-  const anioPasado = Math.max(...Object.keys(TAB_ANIO.acumuladoMismoRangoAniosAnteriores).map(Number));
-  const vsPasado = formatoVariacion(TAB_ANIO.acumuladoAnioActual, TAB_ANIO.acumuladoMismoRangoAniosAnteriores[anioPasado]);
-  const elVsPasado = document.getElementById("anio-vs-pasado");
-  elVsPasado.textContent = vsPasado.texto;
-  elVsPasado.className = `card-value ${vsPasado.clase}`;
 
   const itemsAcumulado = Object.entries(TAB_ANIO.acumuladoMismoRangoAniosAnteriores)
     .sort((a, b) => a[0] - b[0])
@@ -105,10 +108,21 @@ function pintarTabAnio() {
   itemsAcumulado.push({ etiqueta: String(TAB_ANIO.anioActual), valor: TAB_ANIO.acumuladoAnioActual });
   pintarBarras("grafico-acumulado-anio", itemsAcumulado, String(TAB_ANIO.anioActual));
 
+  // Bloque: año pasado (cerrado, la comparación justa)
+  document.getElementById("titulo-anio-pasado").textContent = `Año pasado: ${TAB_ANIO.anioPasado}`;
+  document.getElementById("anio-pasado-total").textContent = formatoCLP(TAB_ANIO.totalAnioPasado);
+
+  const aniosCompletos = Object.keys(TAB_ANIO.totalesAnioCompleto).map(Number);
+  const anioAnterior = Math.max(...aniosCompletos.filter((a) => a < TAB_ANIO.anioPasado));
+  const vsAnterior = formatoVariacion(TAB_ANIO.totalAnioPasado, TAB_ANIO.totalesAnioCompleto[anioAnterior]);
+  const elVsAnterior = document.getElementById("anio-pasado-vs-anterior");
+  elVsAnterior.textContent = vsAnterior.texto;
+  elVsAnterior.className = `card-value ${vsAnterior.clase}`;
+
   const itemsAnioCompleto = Object.entries(TAB_ANIO.totalesAnioCompleto)
     .sort((a, b) => a[0] - b[0])
     .map(([anio, valor]) => ({ etiqueta: anio, valor }));
-  pintarBarras("grafico-anio-completo", itemsAnioCompleto, null);
+  pintarBarras("grafico-anio-completo", itemsAnioCompleto, String(TAB_ANIO.anioPasado));
 }
 
 function pintarTabPropiedades() {

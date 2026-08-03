@@ -54,6 +54,10 @@
             <span class="card-value" id="pasado-total">-</span>
           </div>
           <div class="card">
+            <span class="card-label" id="pasado-label-vs-mes-anterior">Vs. mes anterior</span>
+            <span class="card-value" id="pasado-vs-mes-anterior">-</span>
+          </div>
+          <div class="card">
             <span class="card-label">Vs. mismo mes año pasado</span>
             <span class="card-value" id="pasado-vs-anio-pasado">-</span>
           </div>
@@ -71,24 +75,38 @@
 
   <!-- TAB: Total año -->
   <section class="tab-content" id="tab-anio">
-    <div class="cards">
-      <div class="card">
-        <span class="card-label" id="anio-label-acumulado">Acumulado este año</span>
-        <span class="card-value" id="anio-acumulado">-</span>
+    <div class="mes-columnas">
+      <div class="mes-bloque">
+        <h3 id="titulo-anio-actual">Año actual</h3>
+        <p class="nota">En curso — informativo, no es comparación justa contra años completos.</p>
+        <div class="cards">
+          <div class="card">
+            <span class="card-label" id="anio-label-acumulado">Acumulado a la fecha</span>
+            <span class="card-value" id="anio-acumulado">-</span>
+          </div>
+        </div>
+        <h4>Mismo acumulado, años anteriores</h4>
+        <div id="grafico-acumulado-anio"></div>
       </div>
-      <div class="card">
-        <span class="card-label">Vs. mismo acumulado año pasado</span>
-        <span class="card-value" id="anio-vs-pasado">-</span>
+
+      <div class="mes-bloque">
+        <h3 id="titulo-anio-pasado">Año pasado</h3>
+        <p class="nota">Año cerrado y completo — la comparación justa, año contra año.</p>
+        <div class="cards">
+          <div class="card">
+            <span class="card-label">Total del año</span>
+            <span class="card-value" id="anio-pasado-total">-</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Vs. año anterior</span>
+            <span class="card-value" id="anio-pasado-vs-anterior">-</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="table-section">
-      <h3>Acumulado a la fecha, por año</h3>
-      <div id="grafico-acumulado-anio"></div>
-    </div>
-
-    <div class="table-section">
-      <h3>Total años completos (histórico)</h3>
+      <h3>Años completos, histórico</h3>
       <div id="grafico-anio-completo"></div>
     </div>
   </section>

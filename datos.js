@@ -1,10 +1,11 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-03T20:08:53.593Z
+// Última actualización: 2026-08-03T20:20:50.148Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-03T20:08:53.594Z";
+const ULTIMA_ACTUALIZACION = "2026-08-03T20:20:50.151Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
+  "mesAntesDelPasado": "2026-06",
   "actual": {
     "total": 1702786,
     "pagando": 8,
@@ -36,6 +37,7 @@ const TAB_MES = {
       "Callao 3600 Dpto 305 (Hendaya)"
     ]
   },
+  "totalMesAntesDelPasado": 7154797,
   "totalesMismoMesAniosAnteriores": {
     "2020": 2653207,
     "2021": 2085664,
@@ -57,6 +59,8 @@ const TAB_ANIO = {
     "2024": 36796360,
     "2025": 43676955
   },
+  "anioPasado": 2025,
+  "totalAnioPasado": 73515515,
   "totalesAnioCompleto": {
     "2020": 26977355,
     "2021": 33704255,

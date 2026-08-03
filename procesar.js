@@ -154,11 +154,16 @@ function procesarCSV(csvTexto, fechaReferencia) {
   const aniosPasados = [];
   for (let a = anioReferencia - 1; a >= PRIMER_ANIO_CON_DATOS; a--) aniosPasados.push(a);
 
+  const mesAntesDelPasadoFecha = new Date(mesPasadoFecha.getFullYear(), mesPasadoFecha.getMonth() - 1, 1);
+  const claveMesAntesDelPasado = claveMesAnioMes(mesAntesDelPasadoFecha.getFullYear(), mesAntesDelPasadoFecha.getMonth());
+
   const TAB_MES = {
     mesActual: claveMesActual,
     mesPasado: claveMesPasado,
+    mesAntesDelPasado: claveMesAntesDelPasado,
     actual: resumenDeMes(claveMesActual),
     pasado: resumenDeMes(claveMesPasado),
+    totalMesAntesDelPasado: totalMes(claveMesAntesDelPasado),
     totalesMismoMesAniosAnteriores: {},
   };
   for (const a of aniosPasados) {
@@ -171,15 +176,25 @@ function procesarCSV(csvTexto, fechaReferencia) {
     return total;
   }
 
+  // El año en curso siempre está incompleto - no sirve para comparar "año contra
+  // año" de forma justa. Para eso usamos el último año 100% cerrado (normalmente
+  // el año anterior, salvo en enero, donde el año que recién terminó ya está completo).
+  const anioPasadoCompleto = mesPasadoIndex0 === 11 ? anioReferencia : anioReferencia - 1;
+  const aniosCompletosAnteriores = aniosPasados.filter((a) => a !== anioPasadoCompleto && a < anioPasadoCompleto);
+
   const TAB_ANIO = {
     anioActual: anioReferencia,
     mesesIncluidos: mesPasadoIndex0 + 1,
     acumuladoAnioActual: totalRangoMeses(anioReferencia, 0, mesPasadoIndex0),
     acumuladoMismoRangoAniosAnteriores: {},
+    anioPasado: anioPasadoCompleto,
+    totalAnioPasado: totalRangoMeses(anioPasadoCompleto, 0, 11),
     totalesAnioCompleto: {},
   };
   for (const a of aniosPasados) {
     TAB_ANIO.acumuladoMismoRangoAniosAnteriores[a] = totalRangoMeses(a, 0, mesPasadoIndex0);
+  }
+  for (const a of [anioPasadoCompleto, ...aniosCompletosAnteriores]) {
     TAB_ANIO.totalesAnioCompleto[a] = totalRangoMeses(a, 0, 11);
   }
 
