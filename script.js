@@ -136,7 +136,7 @@ function celdaArrendatario(nombre, contrato) {
 }
 
 function celdaVencimiento(vencimientoISO) {
-  if (!vencimientoISO) return `<span class="vacio">En construcción</span>`;
+  if (!vencimientoISO) return `<span class="dato-faltante">Falta info</span>`;
   const hoy = new Date();
   const fechaVencimiento = new Date(vencimientoISO + "T00:00:00");
   const diasRestantes = Math.round((fechaVencimiento - hoy) / DIA_EN_MS);
@@ -152,7 +152,7 @@ function celdaVencimiento(vencimientoISO) {
 }
 
 function celdaMontoUF(contrato) {
-  if (!contrato || !contrato.montoUF) return `<span class="vacio">En construcción</span>`;
+  if (!contrato || !contrato.montoUF) return `<span class="dato-faltante">Falta info</span>`;
   const texto = `${contrato.montoUF} UF`;
   if (!contrato.notaMontoUF) return texto;
   return `<span class="con-tooltip" tabindex="0">${texto}<span class="tooltip-caja">${contrato.notaMontoUF}</span></span>`;
@@ -172,10 +172,10 @@ function pintarTabPropiedades() {
     const contrato = CONTRATOS_LOCAL[p.propiedad];
     const arrendatario = (contrato && contrato.arrendatario) || p.arrendatario;
     return `
-      <tr>
+      <tr class="${contrato ? "" : "fila-incompleta"}">
         <td>${p.propiedad}</td>
         <td>${celdaArrendatario(arrendatario, contrato)}</td>
-        <td>${(contrato && contrato.aliasCuenta) || `<span class="vacio">En construcción</span>`}</td>
+        <td>${(contrato && contrato.aliasCuenta) || `<span class="dato-faltante">Falta info</span>`}</td>
         <td>${celdaVencimiento(contrato && contrato.vencimientoContrato)}</td>
         <td>${celdaMontoUF(contrato)}</td>
         <td>${celdaGarantia(contrato, p.garantiaRaw)}</td>

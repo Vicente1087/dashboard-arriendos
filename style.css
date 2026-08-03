@@ -265,6 +265,15 @@ h3 {
   font-style: italic;
 }
 
+.dato-faltante {
+  color: #c94a4a;
+  font-style: italic;
+}
+
+.fila-incompleta {
+  background: #fef4f2;
+}
+
 .con-tooltip {
   position: relative;
   cursor: help;
