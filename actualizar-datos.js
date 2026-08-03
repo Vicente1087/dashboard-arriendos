@@ -79,36 +79,48 @@ async function main() {
   }
 
   // --- Fechas de referencia ---
+  // "Mes pasado" = el último mes completo y cerrado (fuente confiable para totales).
+  // "Mes actual" = el mes en curso, recién empezando - normal que tenga pocos datos.
+  // Esto se recalcula solo cada vez que se corre el script, así que rota automáticamente
+  // el día 1 de cada mes sin tocar código.
   const HOY = new Date();
-  const mesCerradoFecha = new Date(HOY.getFullYear(), HOY.getMonth() - 1, 1);
-  const mesEnCursoFecha = new Date(HOY.getFullYear(), HOY.getMonth(), 1);
-  const claveMesCerrado = claveMesAnioMes(mesCerradoFecha.getFullYear(), mesCerradoFecha.getMonth());
-  const claveMesAnterior = claveMesAnioMes(mesCerradoFecha.getFullYear(), mesCerradoFecha.getMonth() - 1 < 0 ? 11 : mesCerradoFecha.getMonth() - 1);
-  // (el cálculo de mes anterior con año cruzado se corrige abajo con Date real)
-  const mesAnteriorFecha = new Date(mesCerradoFecha.getFullYear(), mesCerradoFecha.getMonth() - 1, 1);
-  const claveMesAnteriorReal = claveMesAnioMes(mesAnteriorFecha.getFullYear(), mesAnteriorFecha.getMonth());
+  const mesPasadoFecha = new Date(HOY.getFullYear(), HOY.getMonth() - 1, 1);
+  const mesActualFecha = new Date(HOY.getFullYear(), HOY.getMonth(), 1);
+  const claveMesPasado = claveMesAnioMes(mesPasadoFecha.getFullYear(), mesPasadoFecha.getMonth());
+  const claveMesActual = claveMesAnioMes(mesActualFecha.getFullYear(), mesActualFecha.getMonth());
 
-  const anioCerrado = mesCerradoFecha.getFullYear();
-  const mesCerradoIndex0 = mesCerradoFecha.getMonth(); // 0-11
+  const anioReferencia = mesPasadoFecha.getFullYear();
+  const mesPasadoIndex0 = mesPasadoFecha.getMonth(); // 0-11
 
   // Años con datos en el sheet (2020 en adelante, hasta el año actual)
   const primerAnio = 2020;
   const aniosPasados = [];
-  for (let a = anioCerrado - 1; a >= primerAnio; a--) aniosPasados.push(a);
+  for (let a = anioReferencia - 1; a >= primerAnio; a--) aniosPasados.push(a);
 
-  // --- TAB 1: Mes ---
-  const totalMesCerrado = totalMes(claveMesCerrado);
-  const totalMesAnterior = totalMes(claveMesAnteriorReal);
-  const totalesMismoMesAniosAnteriores = {};
-  for (const a of aniosPasados) {
-    totalesMismoMesAniosAnteriores[a] = totalMes(claveMesAnioMes(a, mesCerradoIndex0));
+  // Resumen reutilizable para cualquier mes: total recaudado y qué propiedades quedaron
+  // sin registro (ni número, ni "En uso").
+  function resumenDeMes(clave) {
+    const clasificacion = clasificarMes(clave);
+    const pendientes = filasDatos
+      .map((f, i) => ({ propiedad: f[idxPropiedad].trim(), estado: clasificacion[i].estado }))
+      .filter((p) => p.estado === "vacante")
+      .map((p) => p.propiedad);
+    const pagando = clasificacion.filter((c) => c.estado === "pagado").length;
+    return {
+      total: totalMes(clave),
+      pagando,
+      totalPropiedades: filasDatos.length,
+      pendientes,
+    };
   }
 
-  const clasificacionMesCerrado = clasificarMes(claveMesCerrado);
-  const pendientes = filasDatos
-    .map((f, i) => ({ propiedad: f[idxPropiedad].trim(), estado: clasificacionMesCerrado[i].estado }))
-    .filter((p) => p.estado === "vacante")
-    .map((p) => p.propiedad);
+  // --- TAB 1: Mes ---
+  const resumenMesActual = resumenDeMes(claveMesActual);
+  const resumenMesPasado = resumenDeMes(claveMesPasado);
+  const totalesMismoMesAniosAnteriores = {};
+  for (const a of aniosPasados) {
+    totalesMismoMesAniosAnteriores[a] = totalMes(claveMesAnioMes(a, mesPasadoIndex0));
+  }
 
   // --- TAB 2: Total año ---
   function totalRangoMeses(anio, desdeMes0, hastaMes0) {
@@ -117,11 +129,11 @@ async function main() {
     return total;
   }
 
-  const acumuladoAnioActual = totalRangoMeses(anioCerrado, 0, mesCerradoIndex0);
+  const acumuladoAnioActual = totalRangoMeses(anioReferencia, 0, mesPasadoIndex0);
   const acumuladoMismoRangoAniosAnteriores = {};
   const totalesAnioCompleto = {};
   for (const a of aniosPasados) {
-    acumuladoMismoRangoAniosAnteriores[a] = totalRangoMeses(a, 0, mesCerradoIndex0);
+    acumuladoMismoRangoAniosAnteriores[a] = totalRangoMeses(a, 0, mesPasadoIndex0);
     totalesAnioCompleto[a] = totalRangoMeses(a, 0, 11);
   }
 
@@ -138,17 +150,16 @@ async function main() {
 // Última actualización: ${new Date().toISOString()}
 
 const TAB_MES = {
-  mesCerrado: "${claveMesCerrado}",
-  mesAnterior: "${claveMesAnteriorReal}",
-  totalMesCerrado: ${totalMesCerrado},
-  totalMesAnterior: ${totalMesAnterior},
-  totalesMismoMesAniosAnteriores: ${JSON.stringify(totalesMismoMesAniosAnteriores, null, 2)},
-  pendientes: ${JSON.stringify(pendientes, null, 2)}
+  mesActual: "${claveMesActual}",
+  mesPasado: "${claveMesPasado}",
+  actual: ${JSON.stringify(resumenMesActual, null, 2)},
+  pasado: ${JSON.stringify(resumenMesPasado, null, 2)},
+  totalesMismoMesAniosAnteriores: ${JSON.stringify(totalesMismoMesAniosAnteriores, null, 2)}
 };
 
 const TAB_ANIO = {
-  anioActual: ${anioCerrado},
-  mesesIncluidos: ${mesCerradoIndex0 + 1},
+  anioActual: ${anioReferencia},
+  mesesIncluidos: ${mesPasadoIndex0 + 1},
   acumuladoAnioActual: ${acumuladoAnioActual},
   acumuladoMismoRangoAniosAnteriores: ${JSON.stringify(acumuladoMismoRangoAniosAnteriores, null, 2)},
   totalesAnioCompleto: ${JSON.stringify(totalesAnioCompleto, null, 2)}
@@ -158,7 +169,10 @@ const TAB_PROPIEDADES = ${JSON.stringify(propiedadesContratos, null, 2)};
 `;
 
   fs.writeFileSync("datos.js", salida);
-  console.log(`Listo. Mes cerrado: ${claveMesCerrado}. Total: ${totalMesCerrado.toLocaleString("es-CL")}. Pendientes: ${pendientes.length}.`);
+  console.log(
+    `Listo. Mes actual: ${claveMesActual} ($${resumenMesActual.total.toLocaleString("es-CL")}, ${resumenMesActual.pendientes.length} pendientes). ` +
+      `Mes pasado: ${claveMesPasado} ($${resumenMesPasado.total.toLocaleString("es-CL")}, ${resumenMesPasado.pendientes.length} pendientes).`
+  );
 }
 
 main().catch((err) => {

@@ -19,30 +19,45 @@
 
   <!-- TAB: Mes -->
   <section class="tab-content activo" id="tab-mes">
-    <div class="cards">
-      <div class="card">
-        <span class="card-label">Ingresos mes cerrado</span>
-        <span class="card-value" id="mes-total">-</span>
-        <span class="card-sub" id="mes-vs-anterior"></span>
+    <div class="mes-columnas">
+      <div class="mes-bloque">
+        <h3 id="titulo-mes-actual">Mes actual</h3>
+        <p class="nota">Recién empezando — es normal que todavía falten pagos por registrar.</p>
+        <div class="cards">
+          <div class="card">
+            <span class="card-label">Recaudado hasta ahora</span>
+            <span class="card-value" id="actual-total">-</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Propiedades pagando</span>
+            <span class="card-value" id="actual-pagando">-</span>
+          </div>
+        </div>
+        <h4>Aún sin registrar</h4>
+        <ul id="actual-pendientes" class="checklist"></ul>
       </div>
-      <div class="card">
-        <span class="card-label">Vs. mismo mes año pasado</span>
-        <span class="card-value" id="mes-vs-anio-pasado">-</span>
-      </div>
-      <div class="card card-alert">
-        <span class="card-label">Pendientes de pago</span>
-        <span class="card-value" id="mes-pendientes-total">-</span>
+
+      <div class="mes-bloque">
+        <h3 id="titulo-mes-pasado">Mes pasado</h3>
+        <p class="nota">Mes cerrado y completo — la referencia confiable para comparar.</p>
+        <div class="cards">
+          <div class="card">
+            <span class="card-label">Total recaudado</span>
+            <span class="card-value" id="pasado-total">-</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Vs. mismo mes año pasado</span>
+            <span class="card-value" id="pasado-vs-anio-pasado">-</span>
+          </div>
+        </div>
+        <h4>Quedaron pendientes</h4>
+        <ul id="pasado-pendientes" class="checklist"></ul>
       </div>
     </div>
 
     <div class="table-section">
       <h3>Mismo mes en años anteriores</h3>
       <div id="grafico-mismo-mes"></div>
-    </div>
-
-    <div class="table-section">
-      <h3>Propiedades pendientes de pago (mes cerrado)</h3>
-      <ul id="lista-pendientes" class="checklist"></ul>
     </div>
   </section>
 

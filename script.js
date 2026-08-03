@@ -39,38 +39,41 @@ function pintarBarras(contenedorId, items, claveActual) {
     .join("");
 }
 
+function pintarLista(id, propiedades) {
+  const el = document.getElementById(id);
+  el.innerHTML =
+    propiedades.length === 0
+      ? `<li class="vacio">Ninguna.</li>`
+      : propiedades.map((p) => `<li>${p}</li>`).join("");
+}
+
 function pintarTabMes() {
   document.getElementById("subtitulo-mes").textContent =
-    `Mes cerrado: ${nombreMes(TAB_MES.mesCerrado)} · el mes en curso recién empieza, es normal que aún no tenga datos`;
+    `${nombreMes(TAB_MES.mesActual)} en curso · comparando contra ${nombreMes(TAB_MES.mesPasado)} (mes cerrado)`;
 
-  document.getElementById("mes-total").textContent = formatoCLP(TAB_MES.totalMesCerrado);
+  // Bloque: mes actual
+  document.getElementById("titulo-mes-actual").textContent = `Mes actual: ${nombreMes(TAB_MES.mesActual)}`;
+  document.getElementById("actual-total").textContent = formatoCLP(TAB_MES.actual.total);
+  document.getElementById("actual-pagando").textContent = `${TAB_MES.actual.pagando} / ${TAB_MES.actual.totalPropiedades}`;
+  pintarLista("actual-pendientes", TAB_MES.actual.pendientes);
 
-  const vsAnterior = formatoVariacion(TAB_MES.totalMesCerrado, TAB_MES.totalMesAnterior);
-  const subAnterior = document.getElementById("mes-vs-anterior");
-  subAnterior.textContent = `${vsAnterior.texto} (mes anterior)`;
-  subAnterior.className = `card-sub ${vsAnterior.clase}`;
+  // Bloque: mes pasado
+  document.getElementById("titulo-mes-pasado").textContent = `Mes pasado: ${nombreMes(TAB_MES.mesPasado)}`;
+  document.getElementById("pasado-total").textContent = formatoCLP(TAB_MES.pasado.total);
+  pintarLista("pasado-pendientes", TAB_MES.pasado.pendientes);
 
   const anioPasado = Math.max(...Object.keys(TAB_MES.totalesMismoMesAniosAnteriores).map(Number));
   const totalAnioPasado = TAB_MES.totalesMismoMesAniosAnteriores[anioPasado];
-  const vsAnioPasado = formatoVariacion(TAB_MES.totalMesCerrado, totalAnioPasado);
-  const elAnioPasado = document.getElementById("mes-vs-anio-pasado");
+  const vsAnioPasado = formatoVariacion(TAB_MES.pasado.total, totalAnioPasado);
+  const elAnioPasado = document.getElementById("pasado-vs-anio-pasado");
   elAnioPasado.textContent = vsAnioPasado.texto;
   elAnioPasado.className = `card-value ${vsAnioPasado.clase}`;
-
-  document.getElementById("mes-pendientes-total").textContent = TAB_MES.pendientes.length;
 
   const itemsMismoMes = Object.entries(TAB_MES.totalesMismoMesAniosAnteriores)
     .sort((a, b) => a[0] - b[0])
     .map(([anio, valor]) => ({ etiqueta: anio, valor }));
-  itemsMismoMes.push({ etiqueta: TAB_MES.mesCerrado.split("-")[0], valor: TAB_MES.totalMesCerrado });
+  itemsMismoMes.push({ etiqueta: TAB_MES.mesPasado.split("-")[0], valor: TAB_MES.pasado.total });
   pintarBarras("grafico-mismo-mes", itemsMismoMes, itemsMismoMes[itemsMismoMes.length - 1].etiqueta);
-
-  const listaPendientes = document.getElementById("lista-pendientes");
-  if (TAB_MES.pendientes.length === 0) {
-    listaPendientes.innerHTML = `<li class="vacio">Ninguna propiedad pendiente este mes.</li>`;
-  } else {
-    listaPendientes.innerHTML = TAB_MES.pendientes.map((p) => `<li>${p}</li>`).join("");
-  }
 }
 
 function pintarTabAnio() {

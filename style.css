@@ -221,3 +221,44 @@ h3 {
   color: #9aa5b1;
   font-style: italic;
 }
+
+.mes-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mes-bloque {
+  background: white;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.mes-bloque .cards {
+  margin-bottom: 1rem;
+}
+
+.mes-bloque .card {
+  min-width: 0;
+}
+
+.nota {
+  color: #9aa5b1;
+  font-size: 0.85rem;
+  margin: -0.5rem 0 1rem;
+}
+
+h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: #616e7c;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .mes-columnas {
+    grid-template-columns: 1fr;
+  }
+}
