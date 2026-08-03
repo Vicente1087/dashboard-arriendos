@@ -125,19 +125,56 @@ function pintarTabAnio() {
   pintarBarras("grafico-anio-completo", itemsAnioCompleto, String(TAB_ANIO.anioPasado));
 }
 
+const DIA_EN_MS = 1000 * 60 * 60 * 24;
+const DIAS_AVISO_VENCIMIENTO = 60;
+
+function celdaArrendatario(nombre, contrato) {
+  if (!nombre) return "-";
+  if (!contrato || (!contrato.telefono && !contrato.correo)) return nombre;
+  const datos = [contrato.telefono, contrato.correo].filter(Boolean).join(" · ");
+  return `<span class="con-tooltip" tabindex="0">${nombre}<span class="tooltip-caja">${datos}</span></span>`;
+}
+
+function celdaVencimiento(vencimientoISO) {
+  if (!vencimientoISO) return `<span class="vacio">En construcción</span>`;
+  const hoy = new Date();
+  const fechaVencimiento = new Date(vencimientoISO + "T00:00:00");
+  const diasRestantes = Math.round((fechaVencimiento - hoy) / DIA_EN_MS);
+  const fechaLegible = fechaVencimiento.toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
+
+  if (diasRestantes < 0) {
+    return `<span class="vencimiento-vencido">⚠ Venció el ${fechaLegible}</span>`;
+  }
+  if (diasRestantes <= DIAS_AVISO_VENCIMIENTO) {
+    return `<span class="vencimiento-pronto">⚠ Vence en ${diasRestantes} días (${fechaLegible})</span>`;
+  }
+  return `<span class="vencimiento-ok">${fechaLegible}</span>`;
+}
+
+function celdaMontoUF(contrato) {
+  if (!contrato || !contrato.montoUF) return `<span class="vacio">En construcción</span>`;
+  const texto = `${contrato.montoUF} UF`;
+  if (!contrato.notaMontoUF) return texto;
+  return `<span class="con-tooltip" tabindex="0">${texto}<span class="tooltip-caja">${contrato.notaMontoUF}</span></span>`;
+}
+
 function pintarTabPropiedades() {
+  const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
   const tbody = document.getElementById("tabla-propiedades");
-  tbody.innerHTML = estado.TAB_PROPIEDADES.map(
-    (p) => `
+  tbody.innerHTML = estado.TAB_PROPIEDADES.map((p) => {
+    const contrato = CONTRATOS_LOCAL[p.propiedad];
+    const arrendatario = (contrato && contrato.arrendatario) || p.arrendatario;
+    return `
       <tr>
         <td>${p.propiedad}</td>
-        <td>${p.arrendatario || "-"}</td>
-        <td class="vacio">${p.vencimientoContrato}</td>
-        <td class="vacio">${p.montoUF}</td>
+        <td>${celdaArrendatario(arrendatario, contrato)}</td>
+        <td>${(contrato && contrato.aliasCuenta) || `<span class="vacio">En construcción</span>`}</td>
+        <td>${celdaVencimiento(contrato && contrato.vencimientoContrato)}</td>
+        <td>${celdaMontoUF(contrato)}</td>
         <td class="garantia-cruda">${p.garantiaRaw || "-"}</td>
       </tr>
-    `
-  ).join("");
+    `;
+  }).join("");
 }
 
 function pintarTodo() {

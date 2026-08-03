@@ -265,6 +265,49 @@ h3 {
   font-style: italic;
 }
 
+.con-tooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted #9aa5b1;
+}
+
+.con-tooltip .tooltip-caja {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 130%;
+  left: 0;
+  background: #1f2933;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.15s;
+  font-weight: normal;
+}
+
+.con-tooltip:hover .tooltip-caja,
+.con-tooltip:focus .tooltip-caja {
+  visibility: visible;
+  opacity: 1;
+}
+
+.vencimiento-ok {
+  color: #1f2933;
+}
+
+.vencimiento-pronto {
+  color: #b06a00;
+  font-weight: 600;
+}
+
+.vencimiento-vencido {
+  color: #c94a4a;
+  font-weight: 600;
+}
+
 .mes-columnas {
   display: grid;
   grid-template-columns: 1fr 1fr;
