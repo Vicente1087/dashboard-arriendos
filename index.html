@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard de Arriendos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dashboard de Arriendos</h1>
+    <p class="subtitle">Resumen mensual de propiedades</p>
+  </header>
+
+  <section class="cards">
+    <div class="card">
+      <span class="card-label">Ingresos del mes</span>
+      <span class="card-value" id="total-ingresos">-</span>
+    </div>
+    <div class="card">
+      <span class="card-label">Propiedades</span>
+      <span class="card-value" id="total-propiedades">-</span>
+    </div>
+    <div class="card card-alert">
+      <span class="card-label">Pagos pendientes</span>
+      <span class="card-value" id="total-pendientes">-</span>
+    </div>
+  </section>
+
+  <section class="table-section">
+    <table>
+      <thead>
+        <tr>
+          <th>Propiedad</th>
+          <th>Arrendatario</th>
+          <th>Renta</th>
+          <th>Garantía</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-propiedades">
+        <!-- Las filas se generan con JavaScript -->
+      </tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
