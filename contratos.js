@@ -12,6 +12,7 @@ const CONTRATOS = {
     vencimientoContrato: "2027-03-30",
     montoUF: 13,
     notaMontoUF: "13,5 UF si se paga después del día 5 de cada mes",
+    garantia: 520000,
   },
 };
 

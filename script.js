@@ -158,6 +158,13 @@ function celdaMontoUF(contrato) {
   return `<span class="con-tooltip" tabindex="0">${texto}<span class="tooltip-caja">${contrato.notaMontoUF}</span></span>`;
 }
 
+function celdaGarantia(contrato, garantiaRaw) {
+  if (contrato && contrato.garantia) {
+    return `<span title="Monto verificado en el contrato">${formatoCLP(contrato.garantia)}</span>`;
+  }
+  return `<span class="garantia-cruda">${garantiaRaw || "-"}</span>`;
+}
+
 function pintarTabPropiedades() {
   const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
   const tbody = document.getElementById("tabla-propiedades");
@@ -171,7 +178,7 @@ function pintarTabPropiedades() {
         <td>${(contrato && contrato.aliasCuenta) || `<span class="vacio">En construcción</span>`}</td>
         <td>${celdaVencimiento(contrato && contrato.vencimientoContrato)}</td>
         <td>${celdaMontoUF(contrato)}</td>
-        <td class="garantia-cruda">${p.garantiaRaw || "-"}</td>
+        <td>${celdaGarantia(contrato, p.garantiaRaw)}</td>
       </tr>
     `;
   }).join("");
