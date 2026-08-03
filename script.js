@@ -140,7 +140,10 @@ function celdaVencimiento(vencimientoISO) {
   const hoy = new Date();
   const fechaVencimiento = new Date(vencimientoISO + "T00:00:00");
   const diasRestantes = Math.round((fechaVencimiento - hoy) / DIA_EN_MS);
-  const fechaLegible = fechaVencimiento.toLocaleDateString("es-CL", { day: "numeric", month: "long", year: "numeric" });
+  const dd = String(fechaVencimiento.getDate()).padStart(2, "0");
+  const mm = String(fechaVencimiento.getMonth() + 1).padStart(2, "0");
+  const yy = String(fechaVencimiento.getFullYear()).slice(2);
+  const fechaLegible = `${dd}/${mm}/${yy}`;
 
   if (diasRestantes < 0) {
     return `<span class="vencimiento-vencido">⚠ Venció el ${fechaLegible}</span>`;
