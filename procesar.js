@@ -7,6 +7,10 @@
 const MESES = { ene: 0, feb: 1, mar: 2, abr: 3, may: 4, jun: 5, jul: 6, ago: 7, sept: 8, sep: 8, oct: 9, nov: 10, dic: 11, dec: 11 };
 const PRIMER_ANIO_CON_DATOS = 2020;
 
+// Propiedades que a veces se pagan juntas en una sola celda del Google Sheet.
+// Si tienes más casos así, avísame y los agrego aquí.
+const GRUPOS_VINCULADOS = [["La Dehesa 1201, Estacionamiento 298", "La Dehesa 1201, Estacionamiento 299"]];
+
 // --- Parser de CSV simple: soporta campos entre comillas con comas adentro,
 // como pasa con nombres de propiedad tipo "Carmén Sylva 2315, Dpto 507". ---
 function parseCSV(texto) {
@@ -102,10 +106,27 @@ function procesarCSV(csvTexto, fechaReferencia) {
     if (propiedadTxt !== "") filasDatos.push(filas[i]);
   }
 
+  // Algunas propiedades se pagan juntas en una sola celda (ej. dos estacionamientos
+  // con un solo pago) - si cualquiera del grupo tiene un monto, las demás no
+  // deberían aparecer como pendientes ese mes (el monto ya quedó contado una vez).
+  const nombresFilas = filasDatos.map((f) => f[idxPropiedad].trim());
+  function aplicarGruposVinculados(clasificacion) {
+    for (const grupo of GRUPOS_VINCULADOS) {
+      const indices = grupo.map((nombre) => nombresFilas.indexOf(nombre)).filter((i) => i !== -1);
+      const algunoPagado = indices.some((i) => clasificacion[i].estado === "pagado");
+      if (algunoPagado) {
+        for (const i of indices) {
+          if (clasificacion[i].estado !== "pagado") clasificacion[i] = { estado: "pagado", renta: null };
+        }
+      }
+    }
+    return clasificacion;
+  }
+
   function clasificarMes(clave) {
     const idx = columnasPorMes[clave];
-    if (idx === undefined) return filasDatos.map(() => ({ estado: "vacante", renta: null }));
-    return filasDatos.map((f) => clasificarCelda(f[idx]));
+    const base = idx === undefined ? filasDatos.map(() => ({ estado: "vacante", renta: null })) : filasDatos.map((f) => clasificarCelda(f[idx]));
+    return aplicarGruposVinculados(base);
   }
 
   function totalMes(clave) {
