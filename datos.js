@@ -1,73 +1,72 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-03T19:36:25.519Z
+// Última actualización: 2026-08-03T20:03:45.164Z
 
+const ULTIMA_ACTUALIZACION = "2026-08-03T20:03:45.164Z";
 const TAB_MES = {
-  mesActual: "2026-08",
-  mesPasado: "2026-07",
-  actual: {
-  "total": 1702786,
-  "pagando": 8,
-  "totalPropiedades": 25,
-  "pendientes": [
-    "Ahumada 312,  Of.720",
-    "Carmén Sylva 2315, Dpto 507",
-    "Carmén Sylva 2850, Of. 3",
-    "11 de Septiembre 2909, Dpto 810",
-    "Callao 3600 Dpto 305 (Hendaya)",
-    "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
-    "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
-    "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
-    "Málaga 115, Of 710, Estacionamiento 31",
-    "La Dehesa 1201, Estacionamiento 298",
-    "La Dehesa 1201, Estacionamiento 299",
-    "Bodega 4 Carmen Sylva 2315",
-    "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
-    "Málaga 115. Estacionamiento 143,"
-  ]
-},
-  pasado: {
-  "total": 6578513,
-  "pagando": 18,
-  "totalPropiedades": 25,
-  "pendientes": [
-    "Ahumada 312,  Of.720",
-    "Carmén Sylva 2850, Of. 3",
-    "Callao 3600 Dpto 305 (Hendaya)",
-    "La Dehesa 1201, Estacionamiento 299"
-  ]
-},
-  totalesMismoMesAniosAnteriores: {
-  "2020": 2653207,
-  "2021": 2085664,
-  "2022": 4251214,
-  "2023": 4425293,
-  "2024": 5329508,
-  "2025": 6750506
-}
+  "mesActual": "2026-08",
+  "mesPasado": "2026-07",
+  "actual": {
+    "total": 1702786,
+    "pagando": 8,
+    "totalPropiedades": 25,
+    "pendientes": [
+      "Ahumada 312,  Of.720",
+      "Carmén Sylva 2315, Dpto 507",
+      "Carmén Sylva 2850, Of. 3",
+      "11 de Septiembre 2909, Dpto 810",
+      "Callao 3600 Dpto 305 (Hendaya)",
+      "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
+      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
+      "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
+      "Málaga 115, Of 710, Estacionamiento 31",
+      "La Dehesa 1201, Estacionamiento 298",
+      "La Dehesa 1201, Estacionamiento 299",
+      "Bodega 4 Carmen Sylva 2315",
+      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
+      "Málaga 115. Estacionamiento 143,"
+    ]
+  },
+  "pasado": {
+    "total": 6578513,
+    "pagando": 18,
+    "totalPropiedades": 25,
+    "pendientes": [
+      "Ahumada 312,  Of.720",
+      "Carmén Sylva 2850, Of. 3",
+      "Callao 3600 Dpto 305 (Hendaya)",
+      "La Dehesa 1201, Estacionamiento 299"
+    ]
+  },
+  "totalesMismoMesAniosAnteriores": {
+    "2020": 2653207,
+    "2021": 2085664,
+    "2022": 4251214,
+    "2023": 4425293,
+    "2024": 5329508,
+    "2025": 6750506
+  }
 };
-
 const TAB_ANIO = {
-  anioActual: 2026,
-  mesesIncluidos: 7,
-  acumuladoAnioActual: 48028566,
-  acumuladoMismoRangoAniosAnteriores: {
-  "2020": 16215299,
-  "2021": 19231079,
-  "2022": 27597419,
-  "2023": 31852656,
-  "2024": 36796360,
-  "2025": 43676955
-},
-  totalesAnioCompleto: {
-  "2020": 26977355,
-  "2021": 33704255,
-  "2022": 47666624,
-  "2023": 57470525,
-  "2024": 66520459,
-  "2025": 73515515
-}
+  "anioActual": 2026,
+  "mesesIncluidos": 7,
+  "acumuladoAnioActual": 48028566,
+  "acumuladoMismoRangoAniosAnteriores": {
+    "2020": 16215299,
+    "2021": 19231079,
+    "2022": 27597419,
+    "2023": 31852656,
+    "2024": 36796360,
+    "2025": 43676955
+  },
+  "totalesAnioCompleto": {
+    "2020": 26977355,
+    "2021": 33704255,
+    "2022": 47666624,
+    "2023": 57470525,
+    "2024": 66520459,
+    "2025": 73515515
+  }
 };
-
 const TAB_PROPIEDADES = [
   {
     "propiedad": "Ahumada 312,  Of.720",

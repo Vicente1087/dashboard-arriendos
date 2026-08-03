@@ -14,6 +14,45 @@ header {
   margin-bottom: 1.5rem;
 }
 
+.header-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.actualizar-caja {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.btn-actualizar {
+  background: #2f6feb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-actualizar:hover {
+  background: #2558c4;
+}
+
+.btn-actualizar:disabled {
+  background: #9aa5b1;
+  cursor: default;
+}
+
+.btn-actualizar.error {
+  background: #c94a4a;
+}
+
 h1 {
   margin: 0;
   font-size: 1.8rem;

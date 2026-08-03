@@ -1,0 +1,180 @@
+// Lógica compartida para leer y clasificar los datos del Google Sheet.
+// Este archivo funciona TANTO en Node (lo usa actualizar-datos.js, el robot diario)
+// COMO en el navegador (lo usa script.js, para el botón "Actualizar ahora").
+// Por eso no usa nada específico de Node (como require) ni nada específico del
+// navegador (como document) - solo JavaScript puro.
+
+const MESES = { ene: 0, feb: 1, mar: 2, abr: 3, may: 4, jun: 5, jul: 6, ago: 7, sept: 8, sep: 8, oct: 9, nov: 10, dic: 11, dec: 11 };
+const PRIMER_ANIO_CON_DATOS = 2020;
+
+// --- Parser de CSV simple: soporta campos entre comillas con comas adentro,
+// como pasa con nombres de propiedad tipo "Carmén Sylva 2315, Dpto 507". ---
+function parseCSV(texto) {
+  const filas = [];
+  let fila = [];
+  let campo = "";
+  let entreComillas = false;
+
+  for (let i = 0; i < texto.length; i++) {
+    const c = texto[i];
+    if (entreComillas) {
+      if (c === '"' && texto[i + 1] === '"') {
+        campo += '"';
+        i++;
+      } else if (c === '"') {
+        entreComillas = false;
+      } else {
+        campo += c;
+      }
+    } else if (c === '"') {
+      entreComillas = true;
+    } else if (c === ",") {
+      fila.push(campo);
+      campo = "";
+    } else if (c === "\n" || c === "\r") {
+      if (c === "\r" && texto[i + 1] === "\n") i++;
+      fila.push(campo);
+      filas.push(fila);
+      fila = [];
+      campo = "";
+    } else {
+      campo += c;
+    }
+  }
+  if (campo !== "" || fila.length > 0) {
+    fila.push(campo);
+    filas.push(fila);
+  }
+  return filas;
+}
+
+function claveMes(encabezado) {
+  const m = encabezado.trim().toLowerCase().match(/^([a-z]+)-(\d{2})$/);
+  if (!m || !(m[1] in MESES)) return null;
+  const mes = MESES[m[1]];
+  const anio = 2000 + parseInt(m[2], 10);
+  return `${anio}-${String(mes + 1).padStart(2, "0")}`;
+}
+
+function claveMesAnioMes(anio, mesIndex0) {
+  return `${anio}-${String(mesIndex0 + 1).padStart(2, "0")}`;
+}
+
+// Los montos son siempre pesos chilenos enteros, pero el separador de miles varía
+// (a veces punto, a veces coma, a veces nada) - los tratamos todos como separadores.
+function esNumero(texto) {
+  return /^[\d.,]+$/.test(texto.trim()) && /\d/.test(texto);
+}
+
+function aNumero(texto) {
+  return parseInt(texto.trim().replace(/[.,]/g, ""), 10);
+}
+
+function clasificarCelda(valor) {
+  const texto = (valor || "").trim();
+  if (esNumero(texto)) return { estado: "pagado", renta: aNumero(texto) };
+  if (texto.toLowerCase() === "en uso") return { estado: "uso-interno", renta: null };
+  // Todo lo demás (Desocupado, blanco, "se fue", comentarios de pagos atrasados, etc.)
+  // se trata igual: no hay un número confiable que registrar ese mes.
+  return { estado: "vacante", renta: null };
+}
+
+// Toma el texto crudo del CSV y devuelve { TAB_MES, TAB_ANIO, TAB_PROPIEDADES }
+function procesarCSV(csvTexto, fechaReferencia) {
+  const filas = parseCSV(csvTexto);
+  const encabezado = filas[1];
+  const idxPropiedad = 1;
+  const idxArrendatario = encabezado.findIndex((c) => c.trim().toLowerCase() === "arrendatario");
+  const idxGarantia = encabezado.findIndex((c) => c.trim().toLowerCase() === "garantia");
+
+  const columnasPorMes = {};
+  encabezado.forEach((c, i) => {
+    const clave = claveMes(c);
+    if (clave) columnasPorMes[clave] = i;
+  });
+
+  // La tabla de propiedades termina en la fila "Total" - todo lo que viene después
+  // (transferencias, notas, la mini-tabla de totales anuales) no son propiedades.
+  const filasDatos = [];
+  for (let i = 2; i < filas.length; i++) {
+    const propiedadTxt = (filas[i][idxPropiedad] || "").trim();
+    if (propiedadTxt.toLowerCase() === "total") break;
+    if (propiedadTxt !== "") filasDatos.push(filas[i]);
+  }
+
+  function clasificarMes(clave) {
+    const idx = columnasPorMes[clave];
+    if (idx === undefined) return filasDatos.map(() => ({ estado: "vacante", renta: null }));
+    return filasDatos.map((f) => clasificarCelda(f[idx]));
+  }
+
+  function totalMes(clave) {
+    return clasificarMes(clave).reduce((s, c) => s + (c.renta || 0), 0);
+  }
+
+  function resumenDeMes(clave) {
+    const clasificacion = clasificarMes(clave);
+    const pendientes = filasDatos
+      .map((f, i) => ({ propiedad: f[idxPropiedad].trim(), estado: clasificacion[i].estado }))
+      .filter((p) => p.estado === "vacante")
+      .map((p) => p.propiedad);
+    const pagando = clasificacion.filter((c) => c.estado === "pagado").length;
+    return { total: totalMes(clave), pagando, totalPropiedades: filasDatos.length, pendientes };
+  }
+
+  const HOY = fechaReferencia || new Date();
+  const mesPasadoFecha = new Date(HOY.getFullYear(), HOY.getMonth() - 1, 1);
+  const mesActualFecha = new Date(HOY.getFullYear(), HOY.getMonth(), 1);
+  const claveMesPasado = claveMesAnioMes(mesPasadoFecha.getFullYear(), mesPasadoFecha.getMonth());
+  const claveMesActual = claveMesAnioMes(mesActualFecha.getFullYear(), mesActualFecha.getMonth());
+  const anioReferencia = mesPasadoFecha.getFullYear();
+  const mesPasadoIndex0 = mesPasadoFecha.getMonth();
+
+  const aniosPasados = [];
+  for (let a = anioReferencia - 1; a >= PRIMER_ANIO_CON_DATOS; a--) aniosPasados.push(a);
+
+  const TAB_MES = {
+    mesActual: claveMesActual,
+    mesPasado: claveMesPasado,
+    actual: resumenDeMes(claveMesActual),
+    pasado: resumenDeMes(claveMesPasado),
+    totalesMismoMesAniosAnteriores: {},
+  };
+  for (const a of aniosPasados) {
+    TAB_MES.totalesMismoMesAniosAnteriores[a] = totalMes(claveMesAnioMes(a, mesPasadoIndex0));
+  }
+
+  function totalRangoMeses(anio, desdeMes0, hastaMes0) {
+    let total = 0;
+    for (let m = desdeMes0; m <= hastaMes0; m++) total += totalMes(claveMesAnioMes(anio, m));
+    return total;
+  }
+
+  const TAB_ANIO = {
+    anioActual: anioReferencia,
+    mesesIncluidos: mesPasadoIndex0 + 1,
+    acumuladoAnioActual: totalRangoMeses(anioReferencia, 0, mesPasadoIndex0),
+    acumuladoMismoRangoAniosAnteriores: {},
+    totalesAnioCompleto: {},
+  };
+  for (const a of aniosPasados) {
+    TAB_ANIO.acumuladoMismoRangoAniosAnteriores[a] = totalRangoMeses(a, 0, mesPasadoIndex0);
+    TAB_ANIO.totalesAnioCompleto[a] = totalRangoMeses(a, 0, 11);
+  }
+
+  const TAB_PROPIEDADES = filasDatos.map((f) => ({
+    propiedad: f[idxPropiedad].trim(),
+    arrendatario: (f[idxArrendatario] || "").trim(),
+    garantiaRaw: idxGarantia !== -1 ? (f[idxGarantia] || "").trim() : "",
+    vencimientoContrato: "En construcción",
+    montoUF: "En construcción",
+  }));
+
+  return { TAB_MES, TAB_ANIO, TAB_PROPIEDADES };
+}
+
+// En Node (actualizar-datos.js) esto queda disponible vía require(); en el
+// navegador, este bloque se ignora y las funciones de arriba quedan globales.
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { procesarCSV };
+}
