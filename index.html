@@ -8,43 +8,84 @@
 <body>
   <header>
     <h1>Dashboard de Arriendos</h1>
-    <p class="subtitle" id="subtitulo-mes">Resumen mensual de propiedades</p>
+    <p class="subtitle" id="subtitulo-mes">-</p>
   </header>
 
-  <section class="cards">
-    <div class="card">
-      <span class="card-label">Ingresos (mes cerrado)</span>
-      <span class="card-value" id="total-ingresos">-</span>
+  <nav class="tabs">
+    <button class="tab-btn activo" data-tab="mes">Mes</button>
+    <button class="tab-btn" data-tab="anio">Total año</button>
+    <button class="tab-btn" data-tab="propiedades">Propiedades / Contratos</button>
+  </nav>
+
+  <!-- TAB: Mes -->
+  <section class="tab-content activo" id="tab-mes">
+    <div class="cards">
+      <div class="card">
+        <span class="card-label">Ingresos mes cerrado</span>
+        <span class="card-value" id="mes-total">-</span>
+        <span class="card-sub" id="mes-vs-anterior"></span>
+      </div>
+      <div class="card">
+        <span class="card-label">Vs. mismo mes año pasado</span>
+        <span class="card-value" id="mes-vs-anio-pasado">-</span>
+      </div>
+      <div class="card card-alert">
+        <span class="card-label">Pendientes de pago</span>
+        <span class="card-value" id="mes-pendientes-total">-</span>
+      </div>
     </div>
-    <div class="card">
-      <span class="card-label">Propiedades pagando</span>
-      <span class="card-value" id="total-pagando">-</span>
+
+    <div class="table-section">
+      <h3>Mismo mes en años anteriores</h3>
+      <div id="grafico-mismo-mes"></div>
     </div>
-    <div class="card">
-      <span class="card-label">Uso interno</span>
-      <span class="card-value" id="total-uso-interno">-</span>
-    </div>
-    <div class="card card-alert">
-      <span class="card-label">Vacantes (revisar)</span>
-      <span class="card-value" id="total-vacantes">-</span>
+
+    <div class="table-section">
+      <h3>Propiedades pendientes de pago (mes cerrado)</h3>
+      <ul id="lista-pendientes" class="checklist"></ul>
     </div>
   </section>
 
-  <section class="table-section">
-    <table>
-      <thead>
-        <tr>
-          <th>Propiedad</th>
-          <th>Arrendatario</th>
-          <th>Estado</th>
-          <th>Renta</th>
-          <th>Garantía (sin verificar)</th>
-        </tr>
-      </thead>
-      <tbody id="tabla-propiedades">
-        <!-- Las filas se generan con JavaScript -->
-      </tbody>
-    </table>
+  <!-- TAB: Total año -->
+  <section class="tab-content" id="tab-anio">
+    <div class="cards">
+      <div class="card">
+        <span class="card-label" id="anio-label-acumulado">Acumulado este año</span>
+        <span class="card-value" id="anio-acumulado">-</span>
+      </div>
+      <div class="card">
+        <span class="card-label">Vs. mismo acumulado año pasado</span>
+        <span class="card-value" id="anio-vs-pasado">-</span>
+      </div>
+    </div>
+
+    <div class="table-section">
+      <h3>Acumulado a la fecha, por año</h3>
+      <div id="grafico-acumulado-anio"></div>
+    </div>
+
+    <div class="table-section">
+      <h3>Total años completos (histórico)</h3>
+      <div id="grafico-anio-completo"></div>
+    </div>
+  </section>
+
+  <!-- TAB: Propiedades / Contratos -->
+  <section class="tab-content" id="tab-propiedades">
+    <div class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Arrendatario</th>
+            <th>Vencimiento contrato</th>
+            <th>Monto UF</th>
+            <th>Garantía (sin verificar)</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-propiedades"></tbody>
+      </table>
+    </div>
   </section>
 
   <script src="datos.js"></script>

@@ -109,3 +109,115 @@ th {
   color: #9aa5b1;
   font-size: 0.85rem;
 }
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e4e7eb;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  color: #616e7c;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn.activo {
+  color: #1f2933;
+  font-weight: 600;
+  border-bottom-color: #2f6feb;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.activo {
+  display: block;
+}
+
+.card-sub {
+  display: block;
+  font-size: 0.8rem;
+  color: #616e7c;
+  margin-top: 0.3rem;
+}
+
+.card-sub.positivo {
+  color: #1f9254;
+}
+
+.card-sub.negativo {
+  color: #c94a4a;
+}
+
+h3 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: #1f2933;
+}
+
+.table-section + .table-section {
+  margin-top: 1.5rem;
+}
+
+.barra-fila {
+  display: grid;
+  grid-template-columns: 70px 1fr 110px;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.barra-pista {
+  background: #eef1f5;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 18px;
+}
+
+.barra-relleno {
+  background: #2f6feb;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.barra-relleno.actual {
+  background: #1f9254;
+}
+
+.barra-valor {
+  text-align: right;
+  color: #616e7c;
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e4e7eb;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist li::before {
+  content: "☐ ";
+  color: #c94a4a;
+}
+
+.vacio {
+  color: #9aa5b1;
+  font-style: italic;
+}
