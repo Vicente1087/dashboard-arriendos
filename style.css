@@ -95,7 +95,17 @@ th {
   color: #1f9254;
 }
 
-.estado-pendiente {
+.estado-vacante {
   background: #fde8e8;
   color: #c94a4a;
+}
+
+.estado-uso-interno {
+  background: #eef1f5;
+  color: #616e7c;
+}
+
+.garantia-cruda {
+  color: #9aa5b1;
+  font-size: 0.85rem;
 }
