@@ -13,6 +13,7 @@ const CONTRATOS = {
     montoUF: 13,
     notaMontoUF: "13,5 UF si se paga después del día 5 de cada mes",
     garantia: 520000,
+    driveContrato: "https://drive.google.com/drive/folders/1Wxj3k8PBR5S5AGDwL6201HMWmHq0aDEM",
   },
 };
 

@@ -158,6 +158,11 @@ function celdaMontoUF(contrato) {
   return `<span class="con-tooltip" tabindex="0">${texto}<span class="tooltip-caja">${contrato.notaMontoUF}</span></span>`;
 }
 
+function celdaContrato(contrato) {
+  if (!contrato || !contrato.driveContrato) return `<span class="dato-faltante">Falta info</span>`;
+  return `<a href="${contrato.driveContrato}" target="_blank" rel="noopener">Ver contrato</a>`;
+}
+
 function celdaGarantia(contrato, garantiaRaw) {
   if (contrato && contrato.garantia) {
     return `<span title="Monto verificado en el contrato">${formatoCLP(contrato.garantia)}</span>`;
@@ -179,6 +184,7 @@ function pintarTabPropiedades() {
         <td>${celdaVencimiento(contrato && contrato.vencimientoContrato)}</td>
         <td>${celdaMontoUF(contrato)}</td>
         <td>${celdaGarantia(contrato, p.garantiaRaw)}</td>
+        <td>${celdaContrato(contrato)}</td>
       </tr>
     `;
   }).join("");
