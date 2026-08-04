@@ -1,20 +1,18 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-03T20:20:50.148Z
+// Última actualización: 2026-08-04T14:26:59.585Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-03T20:20:50.151Z";
+const ULTIMA_ACTUALIZACION = "2026-08-04T14:26:59.586Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
   "mesAntesDelPasado": "2026-06",
   "actual": {
-    "total": 1702786,
-    "pagando": 8,
+    "total": 2763060,
+    "pagando": 11,
     "totalPropiedades": 25,
     "pendientes": [
       "Ahumada 312,  Of.720",
-      "Carmén Sylva 2315, Dpto 507",
       "Carmén Sylva 2850, Of. 3",
-      "11 de Septiembre 2909, Dpto 810",
       "Callao 3600 Dpto 305 (Hendaya)",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
       "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
@@ -23,8 +21,7 @@ const TAB_MES = {
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
       "Bodega 4 Carmen Sylva 2315",
-      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
-      "Málaga 115. Estacionamiento 143,"
+      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9"
     ]
   },
   "pasado": {
