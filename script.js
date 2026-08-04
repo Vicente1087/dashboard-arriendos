@@ -130,8 +130,8 @@ const DIAS_AVISO_VENCIMIENTO = 60;
 
 function celdaArrendatario(nombre, contrato) {
   if (!nombre) return "-";
-  if (!contrato || (!contrato.telefono && !contrato.correo)) return nombre;
-  const datos = [contrato.telefono, contrato.correo].filter(Boolean).join(" · ");
+  if (!contrato || (!contrato.telefono && !contrato.correo && !contrato.contactoNombre)) return nombre;
+  const datos = [contrato.contactoNombre, contrato.telefono, contrato.correo].filter(Boolean).join(" · ");
   return `<span class="con-tooltip" tabindex="0">${nombre}<span class="tooltip-caja">${datos}</span></span>`;
 }
 
@@ -168,7 +168,8 @@ function celdaContrato(contrato) {
 
 function celdaGarantia(contrato, garantiaRaw) {
   if (contrato && contrato.garantia) {
-    return `<span title="Monto verificado en el contrato">${formatoCLP(contrato.garantia)}</span>`;
+    const texto = typeof contrato.garantia === "number" ? formatoCLP(contrato.garantia) : contrato.garantia;
+    return `<span title="Monto verificado en el contrato">${texto}</span>`;
   }
   return `<span class="garantia-cruda">${garantiaRaw || "-"}</span>`;
 }
