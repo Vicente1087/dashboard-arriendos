@@ -37,6 +37,13 @@ const CONTRATOS = {
     garantia: 520000,
     driveContrato: "https://drive.google.com/file/d/1UyQiJpJbfdl8yWqxiYCV8paq8zvB2acL/view?usp=sharing",
   },
+  "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9": {
+    arrendatario: "Consultora Geotech SpA (contacto: Fredy Bustos Mendoza)",
+    aliasCuenta: "CONSULTORA GEOTECH SPA",
+    vencimientoContrato: "2026-08-01",
+    montoUF: 20,
+    driveContrato: "https://docs.google.com/document/d/1eFg70ONK5kNKCA4uPWLsDYUEypdzgOqI/edit?usp=sharing&ouid=104770762334510379335&rtpof=true&sd=true",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
