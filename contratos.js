@@ -26,6 +26,17 @@ const CONTRATOS = {
     garantia: 450000,
     driveContrato: "https://drive.google.com/file/d/13forOK5_YV58UGxZLYmdNUInljS3iS-x/view?usp=sharing",
   },
+  "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120": {
+    arrendatario: "Patricio Rojas Rosales",
+    aliasCuenta: "Patricio Eugenio Rojas Ro",
+    telefono: "+56 9 6728 1633",
+    correo: "recta_provincia@hotmail.com",
+    vencimientoContrato: "2027-03-30",
+    montoUF: 13,
+    notaMontoUF: "14 UF si se paga después del día 5 de cada mes",
+    garantia: 520000,
+    driveContrato: "https://drive.google.com/file/d/1UyQiJpJbfdl8yWqxiYCV8paq8zvB2acL/view?usp=sharing",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
