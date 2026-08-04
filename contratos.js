@@ -15,6 +15,17 @@ const CONTRATOS = {
     garantia: 520000,
     driveContrato: "https://drive.google.com/file/d/1h-OngSQVezdVXpyTUWywkfFdIU8u8HcD/view?usp=drive_link",
   },
+  "Callao 3600 Dpto 305 (Hendaya)": {
+    arrendatario: "Elsa Patricia Arriagada Rubilar",
+    aliasCuenta: "ELSA PATRICIA ARRIA",
+    telefono: "+56 9 9486 6779",
+    correo: "pitufinarriagada@gmail.com",
+    vencimientoContrato: "2027-03-01",
+    montoUF: 11.73,
+    notaMontoUF: "12 UF si se paga después del día 5 de cada mes",
+    garantia: 450000,
+    driveContrato: "https://drive.google.com/file/d/13forOK5_YV58UGxZLYmdNUInljS3iS-x/view?usp=sharing",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
