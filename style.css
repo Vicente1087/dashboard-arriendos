@@ -274,6 +274,40 @@ h3 {
   background: #fef4f2;
 }
 
+.leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #616e7c;
+}
+
+.leyenda-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.leyenda-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.color-arrendada { background: #8fd6a3; }
+.color-uso-interno { background: #9dbdf0; }
+.color-remodelacion { background: #f3c775; }
+.color-vacante { background: #c2c6cc; }
+.color-falta-info { background: #ef9c92; }
+
+tr.fila-arrendada { background: #eefaf1; }
+tr.fila-uso-interno { background: #eef3fc; }
+tr.fila-remodelacion { background: #fef6e7; }
+tr.fila-vacante { background: #f1f2f4; }
+tr.fila-falta-info { background: #fef4f2; }
+
 .con-tooltip {
   position: relative;
   cursor: help;

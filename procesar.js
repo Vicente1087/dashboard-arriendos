@@ -198,13 +198,32 @@ function procesarCSV(csvTexto, fechaReferencia) {
     TAB_ANIO.totalesAnioCompleto[a] = totalRangoMeses(a, 0, 11);
   }
 
-  const TAB_PROPIEDADES = filasDatos.map((f) => ({
-    propiedad: f[idxPropiedad].trim(),
-    arrendatario: (f[idxArrendatario] || "").trim(),
-    garantiaRaw: idxGarantia !== -1 ? (f[idxGarantia] || "").trim() : "",
-    vencimientoContrato: "En construcción",
-    montoUF: "En construcción",
-  }));
+  // Categoría de cada propiedad para la pestaña Propiedades/Contratos - a propósito
+  // NO depende de si pagó justo este mes (eso es tema de la pestaña Mes), sino de si
+  // tiene un arrendatario asignado (dato fijo del Sheet) y del texto de la última
+  // celda del mes cerrado, para pescar "En uso" / "En remodelación" / "Desocupado".
+  const idxMesPasado = columnasPorMes[claveMesPasado];
+  function categoriaPropiedad(textoCeldaMesPasado, tieneArrendatario) {
+    const t = (textoCeldaMesPasado || "").trim().toLowerCase();
+    if (t === "en uso") return "uso-interno";
+    if (t.includes("remodela")) return "remodelacion";
+    if (t.includes("desocup") || t.includes("disponib") || t.includes("diposnible")) return "vacante";
+    if (esNumero(textoCeldaMesPasado || "") || tieneArrendatario) return "arrendada";
+    return "vacante";
+  }
+
+  const TAB_PROPIEDADES = filasDatos.map((f) => {
+    const arrendatario = (f[idxArrendatario] || "").trim();
+    const textoMesPasado = idxMesPasado !== undefined ? f[idxMesPasado] : "";
+    return {
+      propiedad: f[idxPropiedad].trim(),
+      arrendatario,
+      garantiaRaw: idxGarantia !== -1 ? (f[idxGarantia] || "").trim() : "",
+      categoria: categoriaPropiedad(textoMesPasado, arrendatario !== ""),
+      vencimientoContrato: "En construcción",
+      montoUF: "En construcción",
+    };
+  });
 
   return { TAB_MES, TAB_ANIO, TAB_PROPIEDADES };
 }

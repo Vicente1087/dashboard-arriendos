@@ -175,6 +175,14 @@ function celdaGarantia(contrato, garantiaRaw) {
   return `<span class="garantia-cruda">${garantiaRaw || "-"}</span>`;
 }
 
+function claseFila(p, contrato) {
+  if (p.categoria === "uso-interno") return "fila-uso-interno";
+  if (p.categoria === "remodelacion") return "fila-remodelacion";
+  if (p.categoria === "vacante") return "fila-vacante";
+  // categoria "arrendada": verde si ya tenemos su ficha, rojo si falta
+  return contrato ? "fila-arrendada" : "fila-falta-info";
+}
+
 function pintarTabPropiedades() {
   const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
   const tbody = document.getElementById("tabla-propiedades");
@@ -182,7 +190,7 @@ function pintarTabPropiedades() {
     const contrato = CONTRATOS_LOCAL[p.propiedad];
     const arrendatario = (contrato && contrato.arrendatario) || p.arrendatario;
     return `
-      <tr class="${contrato ? "" : "fila-incompleta"}">
+      <tr class="${claseFila(p, contrato)}">
         <td>${p.propiedad}</td>
         <td>${celdaArrendatario(arrendatario, contrato)}</td>
         <td>${(contrato && contrato.aliasCuenta) || `<span class="dato-faltante">Falta info</span>`}</td>
