@@ -84,7 +84,12 @@ function clasificarCelda(valor) {
 }
 
 // Toma el texto crudo del CSV y devuelve { TAB_MES, TAB_ANIO, TAB_PROPIEDADES }
-function procesarCSV(csvTexto, fechaReferencia) {
+// `estadosManuales` es el objeto ESTADOS de contratos.js (uso interno / en
+// remodelación / vacante) - las propiedades que están ahí NO son candidatas a
+// "pendiente de cobranza" en la pestaña Mes, porque su falta de pago no es un
+// tema de cobranza sino de otra urgencia (o directamente no aplica).
+function procesarCSV(csvTexto, fechaReferencia, estadosManuales) {
+  const ESTADOS_MANUALES = estadosManuales || {};
   const filas = parseCSV(csvTexto);
   const encabezado = filas[1];
   const idxPropiedad = 1;
@@ -135,12 +140,14 @@ function procesarCSV(csvTexto, fechaReferencia) {
 
   function resumenDeMes(clave) {
     const clasificacion = clasificarMes(clave);
-    const pendientes = filasDatos
+    // Solo cuentan para "pagando/pendientes" las propiedades que deberían estar
+    // generando renta (no están en ESTADOS como uso interno/remodelación/vacante).
+    const filasArrendadas = filasDatos
       .map((f, i) => ({ propiedad: f[idxPropiedad].trim(), estado: clasificacion[i].estado }))
-      .filter((p) => p.estado === "vacante")
-      .map((p) => p.propiedad);
-    const pagando = clasificacion.filter((c) => c.estado === "pagado").length;
-    return { total: totalMes(clave), pagando, totalPropiedades: filasDatos.length, pendientes };
+      .filter((p) => !(p.propiedad in ESTADOS_MANUALES));
+    const pendientes = filasArrendadas.filter((p) => p.estado === "vacante").map((p) => p.propiedad);
+    const pagando = filasArrendadas.filter((p) => p.estado === "pagado").length;
+    return { total: totalMes(clave), pagando, totalPropiedades: filasArrendadas.length, pendientes };
   }
 
   const HOY = fechaReferencia || new Date();

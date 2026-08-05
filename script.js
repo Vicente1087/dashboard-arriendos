@@ -259,7 +259,7 @@ function activarBotonActualizar() {
       const res = await fetch(CSV_URL, { cache: "no-store" });
       if (!res.ok) throw new Error(`El Google Sheet respondió con error ${res.status}`);
       const csvTexto = await res.text();
-      const { TAB_MES, TAB_ANIO, TAB_PROPIEDADES } = procesarCSV(csvTexto);
+      const { TAB_MES, TAB_ANIO, TAB_PROPIEDADES } = procesarCSV(csvTexto, undefined, typeof ESTADOS !== "undefined" ? ESTADOS : {});
       estado = { TAB_MES, TAB_ANIO, TAB_PROPIEDADES, ultimaActualizacion: new Date().toISOString() };
       pintarTodo();
       boton.textContent = textoOriginal;

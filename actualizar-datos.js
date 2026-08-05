@@ -4,6 +4,7 @@
 // trae la versión más reciente directo desde el navegador).
 const fs = require("fs");
 const { procesarCSV } = require("./procesar.js");
+const { ESTADOS } = require("./contratos.js");
 
 const CSV_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBo8pYbwsHR_gER1bxky_t-v088sUKUe5fJjEQHvksTUCHIgdUdbM3OjW7j9k_7A/pub?gid=549998238&single=true&output=csv";
@@ -11,7 +12,7 @@ const CSV_URL =
 async function main() {
   const res = await fetch(CSV_URL);
   const csvTexto = await res.text();
-  const { TAB_MES, TAB_ANIO, TAB_PROPIEDADES } = procesarCSV(csvTexto);
+  const { TAB_MES, TAB_ANIO, TAB_PROPIEDADES } = procesarCSV(csvTexto, undefined, ESTADOS);
 
   const salida = `// Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
 // Última actualización: ${new Date().toISOString()}
