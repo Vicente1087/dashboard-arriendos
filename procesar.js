@@ -15,7 +15,7 @@ const GRUPOS_VINCULADOS = [["La Dehesa 1201, Estacionamiento 298", "La Dehesa 12
 // alguien más aparte, así que no sabemos si está ocupada o no) - se fuerzan
 // a "arrendada" para que caigan en "falta información" hasta confirmar.
 const OVERRIDES_CATEGORIA = {
-  "Ahumada 312,  Of.720": "arrendada", // la administra el papá directamente, estado real por confirmar
+  "Ahumada 312,  Of.720": "arrendada", // la administra el papá directamente, estado real por confirmar (OJO: dos espacios antes de "Of.720", así está escrito en el Sheet)
 };
 
 // --- Parser de CSV simple: soporta campos entre comillas con comas adentro,
