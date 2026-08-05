@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-05T19:44:13.125Z
+// Última actualización: 2026-08-05T19:47:07.035Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-05T19:44:13.127Z";
+const ULTIMA_ACTUALIZACION = "2026-08-05T19:47:07.037Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
@@ -9,7 +9,7 @@ const TAB_MES = {
   "actual": {
     "total": 3749296,
     "pagando": 14,
-    "totalPropiedades": 23,
+    "totalPropiedades": 22,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
       "Callao 3600 Dpto 305 (Hendaya)",
@@ -24,7 +24,7 @@ const TAB_MES = {
   "pasado": {
     "total": 6578513,
     "pagando": 19,
-    "totalPropiedades": 23,
+    "totalPropiedades": 22,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
       "Callao 3600 Dpto 305 (Hendaya)",

@@ -9,6 +9,7 @@ const ESTADOS = {
   "Presidente Riesco 4123 Dpto 78, Estacionamiento Bodega ..": "remodelacion",
   "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)": "vacante",
   "Ahumada 312,  Of.720": "vacante",
+  "Augusto Ovalle 1360 Dpto 801, Estacionamiento, Bodega": "uso-interno",
 };
 
 // Datos de contratos mantenidos A MANO (no vienen del Google Sheet, no se
