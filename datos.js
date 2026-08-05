@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-05T19:34:52.574Z
+// Última actualización: 2026-08-05T19:37:10.870Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-05T19:34:52.576Z";
+const ULTIMA_ACTUALIZACION = "2026-08-05T19:37:10.872Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
@@ -9,9 +9,8 @@ const TAB_MES = {
   "actual": {
     "total": 3749296,
     "pagando": 14,
-    "totalPropiedades": 22,
+    "totalPropiedades": 21,
     "pendientes": [
-      "Ahumada 312,  Of.720",
       "Carmén Sylva 2850, Of. 3",
       "Callao 3600 Dpto 305 (Hendaya)",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
@@ -24,9 +23,8 @@ const TAB_MES = {
   "pasado": {
     "total": 6578513,
     "pagando": 19,
-    "totalPropiedades": 22,
+    "totalPropiedades": 21,
     "pendientes": [
-      "Ahumada 312,  Of.720",
       "Carmén Sylva 2850, Of. 3",
       "Callao 3600 Dpto 305 (Hendaya)"
     ]
