@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-05T19:37:10.870Z
+// Última actualización: 2026-08-05T19:44:13.125Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-05T19:37:10.872Z";
+const ULTIMA_ACTUALIZACION = "2026-08-05T19:44:13.127Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
@@ -9,7 +9,7 @@ const TAB_MES = {
   "actual": {
     "total": 3749296,
     "pagando": 14,
-    "totalPropiedades": 21,
+    "totalPropiedades": 23,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
       "Callao 3600 Dpto 305 (Hendaya)",
@@ -17,16 +17,18 @@ const TAB_MES = {
       "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
-      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9"
+      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
+      "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76"
     ]
   },
   "pasado": {
     "total": 6578513,
     "pagando": 19,
-    "totalPropiedades": 21,
+    "totalPropiedades": 23,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
-      "Callao 3600 Dpto 305 (Hendaya)"
+      "Callao 3600 Dpto 305 (Hendaya)",
+      "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76"
     ]
   },
   "totalMesAntesDelPasado": 7154797,
@@ -239,7 +241,14 @@ const TAB_PROPIEDADES = [
     "montoUF": "En construcción"
   },
   {
-    "propiedad": "Presidente Riesco 4123 Dpto 78, Estacionamiento Bodega ..",
+    "propiedad": "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76",
+    "arrendatario": "",
+    "garantiaRaw": "",
+    "vencimientoContrato": "En construcción",
+    "montoUF": "En construcción"
+  },
+  {
+    "propiedad": "Augusto Ovalle 1360 Dpto 801, Estacionamiento, Bodega",
     "arrendatario": "",
     "garantiaRaw": "",
     "vencimientoContrato": "En construcción",
