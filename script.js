@@ -130,8 +130,9 @@ const DIAS_AVISO_VENCIMIENTO = 60;
 
 function celdaArrendatario(nombre, contrato) {
   if (!nombre) return "-";
-  if (!contrato || (!contrato.telefono && !contrato.correo && !contrato.contactoNombre)) return nombre;
-  const datos = [contrato.contactoNombre, contrato.telefono, contrato.correo].filter(Boolean).join(" · ");
+  if (!contrato || (!contrato.telefono && !contrato.correo && !contrato.contactoNombre && !contrato.aval)) return nombre;
+  const aval = contrato.aval ? `Aval: ${contrato.aval}` : null;
+  const datos = [contrato.contactoNombre, contrato.telefono, contrato.correo, aval].filter(Boolean).join(" · ");
   return `<span class="con-tooltip" tabindex="0">${nombre}<span class="tooltip-caja">${datos}</span></span>`;
 }
 

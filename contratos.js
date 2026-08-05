@@ -56,6 +56,18 @@ const CONTRATOS = {
     garantia: 80000,
     driveContrato: "https://drive.google.com/file/d/1L0qZ3ZoBVYNVa1BStTR7o61hvtiFazIo/view?usp=sharing",
   },
+  "Málaga 115, Of. 605": {
+    arrendatario: "Paulina Andrea Acevedo Meza",
+    aliasCuenta: "PAULINA ANDREA ACEV",
+    telefono: "+56 9 3957 7350",
+    correo: "p.acevedomeza@gmail.com",
+    aval: "Angela Beatriz Meza Concha",
+    vencimientoContrato: "2027-07-30",
+    montoUF: 7.5,
+    notaMontoUF: "9,0 UF si se paga después del día 5 de cada mes",
+    garantia: 300000,
+    driveContrato: "https://drive.google.com/file/d/1bQjm4224KtDTZJZEjxO05ryFxxFdHBDe/view?usp=sharing",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
