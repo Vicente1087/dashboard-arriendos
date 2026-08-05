@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-05T09:10:46.628Z
+// Última actualización: 2026-08-05T09:37:30.439Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-05T09:10:46.631Z";
+const ULTIMA_ACTUALIZACION = "2026-08-05T09:37:30.441Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
@@ -17,6 +17,7 @@ const TAB_MES = {
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
       "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
       "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
+      "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
       "Bodega 4 Carmen Sylva 2315",
@@ -32,6 +33,7 @@ const TAB_MES = {
       "Ahumada 312,  Of.720",
       "Carmén Sylva 2850, Of. 3",
       "Callao 3600 Dpto 305 (Hendaya)",
+      "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
       "Presidente Riesco 4123 Dpto 78, Estacionamiento Bodega .."
     ]
   },
