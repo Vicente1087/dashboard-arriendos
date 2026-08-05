@@ -1,15 +1,15 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-04T14:26:59.585Z
+// Última actualización: 2026-08-05T09:06:23.183Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-04T14:26:59.586Z";
+const ULTIMA_ACTUALIZACION = "2026-08-05T09:06:23.186Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
   "mesAntesDelPasado": "2026-06",
   "actual": {
-    "total": 2763060,
-    "pagando": 11,
-    "totalPropiedades": 25,
+    "total": 3161296,
+    "pagando": 12,
+    "totalPropiedades": 26,
     "pendientes": [
       "Ahumada 312,  Of.720",
       "Carmén Sylva 2850, Of. 3",
@@ -17,21 +17,22 @@ const TAB_MES = {
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
       "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
       "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
-      "Málaga 115, Of 710, Estacionamiento 31",
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
       "Bodega 4 Carmen Sylva 2315",
-      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9"
+      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
+      "Presidente Riesco 4123 Dpto 78, Estacionamiento Bodega .."
     ]
   },
   "pasado": {
     "total": 6578513,
     "pagando": 19,
-    "totalPropiedades": 25,
+    "totalPropiedades": 26,
     "pendientes": [
       "Ahumada 312,  Of.720",
       "Carmén Sylva 2850, Of. 3",
-      "Callao 3600 Dpto 305 (Hendaya)"
+      "Callao 3600 Dpto 305 (Hendaya)",
+      "Presidente Riesco 4123 Dpto 78, Estacionamiento Bodega .."
     ]
   },
   "totalMesAntesDelPasado": 7154797,
@@ -230,15 +231,22 @@ const TAB_PROPIEDADES = [
     "montoUF": "En construcción"
   },
   {
-    "propiedad": "Málaga 115. Estacionamiento 143,",
+    "propiedad": "Málaga 115. Estacionamiento 143",
     "arrendatario": "Carlos Contreras",
     "garantiaRaw": "",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
   {
-    "propiedad": "Bodega 46 de Málaga 115.",
+    "propiedad": "Bodega 46 de Málaga 115",
     "arrendatario": "Joaquin Salvador Bustos / Maria Ignacia Bustos Hevia",
+    "garantiaRaw": "",
+    "vencimientoContrato": "En construcción",
+    "montoUF": "En construcción"
+  },
+  {
+    "propiedad": "Presidente Riesco 4123 Dpto 78, Estacionamiento Bodega ..",
+    "arrendatario": "",
     "garantiaRaw": "",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
