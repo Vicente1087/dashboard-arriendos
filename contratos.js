@@ -46,6 +46,16 @@ const CONTRATOS = {
     garantia: "20 UF",
     driveContrato: "https://drive.google.com/file/d/1UbtN8mCjm99UvHyR4X2HzVy8mqjOBP5w/view?usp=sharing",
   },
+  "Málaga 115. Estacionamiento 143,": {
+    arrendatario: "Carlos Alberto Contreras Oyarce",
+    aliasCuenta: "CONTRERAS OYARCE CARLOS ALBERTO",
+    telefono: "+56 9 8147 7264",
+    correo: "carloscontrerasoyarce@gmail.com",
+    vencimientoContrato: "2026-12-30",
+    montoUF: 2.02,
+    garantia: 80000,
+    driveContrato: "https://drive.google.com/file/d/1L0qZ3ZoBVYNVa1BStTR7o61hvtiFazIo/view?usp=sharing",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
