@@ -68,6 +68,18 @@ const CONTRATOS = {
     garantia: 300000,
     driveContrato: "https://drive.google.com/file/d/1bQjm4224KtDTZJZEjxO05ryFxxFdHBDe/view?usp=sharing",
   },
+  "Málaga 115, Of 710, Estacionamiento 31": {
+    arrendatario: "Estudio Fer Quiroz SpA",
+    contactoNombre: "Contacto: Fernanda Macarena Quiróz Osorio",
+    aliasCuenta: "ESTUDIO FER QUIROZ",
+    telefono: "+56 9 7238 2038",
+    correo: "ferquiroz.o@hotmail.com",
+    vencimientoContrato: "2027-02-28",
+    montoUF: 9.75,
+    notaMontoUF: "11 UF si se paga después del día 5 de cada mes",
+    garantia: 330000,
+    driveContrato: "https://drive.google.com/file/d/1Y2E2Y_qDPsBeIGSR2rWhm7kesuRJp6L4/view?usp=sharing",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
