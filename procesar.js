@@ -11,6 +11,14 @@ const PRIMER_ANIO_CON_DATOS = 2020;
 // Si tienes más casos así, avísame y los agrego aquí.
 const GRUPOS_VINCULADOS = [["La Dehesa 1201, Estacionamiento 298", "La Dehesa 1201, Estacionamiento 299"]];
 
+// Algunas celdas de "Arrendatario" en el Sheet tienen de todo pegado (nombre,
+// dirección, estado civil, correo, teléfono) - acá se recorta solo a un nombre
+// limpio para que la tabla no se vea gigante. No afecta si la ficha está
+// completa o no, solo cómo se ve el nombre.
+const CORRECCIONES_ARRENDATARIO = {
+  "Estacionamiento 201 Madison (que se empieza arrendar aparte)": "Hernán Javier Peñafiel Dobud",
+};
+
 // --- Parser de CSV simple: soporta campos entre comillas con comas adentro,
 // como pasa con nombres de propiedad tipo "Carmén Sylva 2315, Dpto 507". ---
 function parseCSV(texto) {
@@ -209,13 +217,17 @@ function procesarCSV(csvTexto, fechaReferencia, estadosManuales) {
   // la pestaña Propiedades/Contratos ya NO se adivina del Sheet (daba problemas
   // con tildes, espacios y palabras nuevas) - se maneja a mano en contratos.js,
   // junto a ESTADOS. Acá solo pasamos los datos crudos que sí vienen del Sheet.
-  const TAB_PROPIEDADES = filasDatos.map((f) => ({
-    propiedad: f[idxPropiedad].trim(),
-    arrendatario: (f[idxArrendatario] || "").trim(),
-    garantiaRaw: idxGarantia !== -1 ? (f[idxGarantia] || "").trim() : "",
-    vencimientoContrato: "En construcción",
-    montoUF: "En construcción",
-  }));
+  const TAB_PROPIEDADES = filasDatos.map((f) => {
+    const propiedad = f[idxPropiedad].trim();
+    const arrendatarioCrudo = (f[idxArrendatario] || "").trim();
+    return {
+      propiedad,
+      arrendatario: CORRECCIONES_ARRENDATARIO[propiedad] || arrendatarioCrudo,
+      garantiaRaw: idxGarantia !== -1 ? (f[idxGarantia] || "").trim() : "",
+      vencimientoContrato: "En construcción",
+      montoUF: "En construcción",
+    };
+  });
 
   return { TAB_MES, TAB_ANIO, TAB_PROPIEDADES };
 }
