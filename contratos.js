@@ -80,6 +80,18 @@ const CONTRATOS = {
     garantia: 330000,
     driveContrato: "https://drive.google.com/file/d/1Y2E2Y_qDPsBeIGSR2rWhm7kesuRJp6L4/view?usp=sharing",
   },
+  "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16": {
+    arrendatario: "Spiess Abogados SpA",
+    contactoNombre: "Contacto: Max Spiess Henríquez",
+    aliasCuenta: "SPIESS ABOGADOS SPA",
+    telefono: "+56 9 8888 3660",
+    correo: "mspiess@spiess-abogados.cl",
+    vencimientoContrato: "2026-06-30",
+    montoUF: 30.5,
+    notaMontoUF: "Pago anticipado de 6 meses; 34 UF si no paga a tiempo",
+    garantia: "30,5 UF",
+    driveContrato: "https://drive.google.com/file/d/1NnPMy_ItfB8nwNY3_zKV_WSQeuysqKNE/view?usp=sharing",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
