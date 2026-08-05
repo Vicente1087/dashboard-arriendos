@@ -92,6 +92,17 @@ const CONTRATOS = {
     garantia: "30,5 UF",
     driveContrato: "https://drive.google.com/file/d/1NnPMy_ItfB8nwNY3_zKV_WSQeuysqKNE/view?usp=sharing",
   },
+  "Bodega 4 Carmen Sylva 2315": {
+    arrendatario: "Jose Alfredo Ortega Jiménez",
+    aliasCuenta: "DE JOSE ALFREDO ORTEGA",
+    telefono: "+56 9 5837 7932",
+    correo: "josealf.ortega32@gmail.com",
+    vencimientoContrato: "2026-09-30",
+    montoUF: 1.3,
+    notaMontoUF: "1,5 UF si se paga después del día 5 de cada mes",
+    garantia: 50000,
+    driveContrato: "https://drive.google.com/file/d/1EQE4_R0mhOsuzuNaQsO5IeBAL_kMoCpM/view?usp=sharing",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
