@@ -183,7 +183,7 @@ function pintarTabPropiedades() {
     const arrendatario = (contrato && contrato.arrendatario) || p.arrendatario;
     return `
       <tr class="${contrato ? "" : "fila-incompleta"}">
-        <td>${p.propiedad}</td>
+        <td>${p.propiedad.replace(/,\s*$/, "")}</td>
         <td>${celdaArrendatario(arrendatario, contrato)}</td>
         <td>${(contrato && contrato.aliasCuenta) || `<span class="dato-faltante">Falta info</span>`}</td>
         <td>${celdaVencimiento(contrato && contrato.vencimientoContrato)}</td>

@@ -54,7 +54,7 @@ const CONTRATOS = {
     vencimientoContrato: "2026-12-30",
     montoUF: 2.02,
     garantia: 80000,
-    driveContrato: "https://drive.google.com/file/d/1L0qZ3ZoBVYNVa1BStTR7o61hvtiFazIo/view?usp=sharing",
+    driveContrato: "https://drive.google.com/file/d/13-DwCTBzIfM7PyugN_4A1KPo8hu3DWgR/view?usp=sharing",
   },
   "Málaga 115, Of. 605": {
     arrendatario: "Paulina Andrea Acevedo Meza",
