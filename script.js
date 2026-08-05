@@ -220,8 +220,8 @@ function pintarTabPropiedades() {
       <tr class="${claseFila(categoria, contrato)}">
         <td>${p.propiedad}</td>
         <td>${celdaArrendatario(arrendatario, contrato)}</td>
-        <td>${(contrato && contrato.aliasCuenta) || `<span class="dato-faltante">Falta info</span>`}</td>
         <td>${celdaVencimiento(contrato && contrato.vencimientoContrato)}</td>
+        <td>${(contrato && contrato.aliasCuenta) || `<span class="dato-faltante">Falta info</span>`}</td>
         <td>${celdaMontoUF(contrato)}</td>
         <td>${celdaGarantia(contrato, p.garantiaRaw)}</td>
         <td>${celdaContrato(contrato)}</td>
