@@ -296,17 +296,17 @@ h3 {
   border-radius: 3px;
 }
 
-.color-arrendada { background: #8fd6a3; }
-.color-uso-interno { background: #9dbdf0; }
-.color-remodelacion { background: #f3c775; }
-.color-vacante { background: #c2c6cc; }
-.color-falta-info { background: #ef9c92; }
+.color-arrendada { background: #34a853; }
+.color-uso-interno { background: #4285f4; }
+.color-remodelacion { background: #a142f4; }
+.color-vacante { background: #f4b400; }
+.color-falta-info { background: #ea4335; }
 
-tr.fila-arrendada { background: #eefaf1; }
-tr.fila-uso-interno { background: #eef3fc; }
-tr.fila-remodelacion { background: #fef6e7; }
-tr.fila-vacante { background: #f1f2f4; }
-tr.fila-falta-info { background: #fef4f2; }
+tr.fila-arrendada { background: #e6f7ea; }
+tr.fila-uso-interno { background: #e8f0fe; }
+tr.fila-remodelacion { background: #f4e6fd; }
+tr.fila-vacante { background: #fff6da; }
+tr.fila-falta-info { background: #fce8e6; }
 
 .con-tooltip {
   position: relative;

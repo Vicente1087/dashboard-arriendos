@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-05T10:14:57.002Z
+// Última actualización: 2026-08-05T10:24:59.708Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-05T10:14:57.004Z";
+const ULTIMA_ACTUALIZACION = "2026-08-05T10:24:59.711Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
@@ -75,7 +75,7 @@ const TAB_PROPIEDADES = [
     "propiedad": "Ahumada 312,  Of.720",
     "arrendatario": "",
     "garantiaRaw": "",
-    "categoria": "vacante",
+    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },

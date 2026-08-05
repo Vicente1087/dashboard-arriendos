@@ -11,6 +11,13 @@ const PRIMER_ANIO_CON_DATOS = 2020;
 // Si tienes más casos así, avísame y los agrego aquí.
 const GRUPOS_VINCULADOS = [["La Dehesa 1201, Estacionamiento 298", "La Dehesa 1201, Estacionamiento 299"]];
 
+// Propiedades donde el estado automático no es confiable (ej. la administra
+// alguien más aparte, así que no sabemos si está ocupada o no) - se fuerzan
+// a "arrendada" para que caigan en "falta información" hasta confirmar.
+const OVERRIDES_CATEGORIA = {
+  "Ahumada 312,  Of.720": "arrendada", // la administra el papá directamente, estado real por confirmar
+};
+
 // --- Parser de CSV simple: soporta campos entre comillas con comas adentro,
 // como pasa con nombres de propiedad tipo "Carmén Sylva 2315, Dpto 507". ---
 function parseCSV(texto) {
@@ -203,7 +210,8 @@ function procesarCSV(csvTexto, fechaReferencia) {
   // tiene un arrendatario asignado (dato fijo del Sheet) y del texto de la última
   // celda del mes cerrado, para pescar "En uso" / "En remodelación" / "Desocupado".
   const idxMesPasado = columnasPorMes[claveMesPasado];
-  function categoriaPropiedad(textoCeldaMesPasado, tieneArrendatario) {
+  function categoriaPropiedad(nombrePropiedad, textoCeldaMesPasado, tieneArrendatario) {
+    if (nombrePropiedad in OVERRIDES_CATEGORIA) return OVERRIDES_CATEGORIA[nombrePropiedad];
     const t = (textoCeldaMesPasado || "").trim().toLowerCase();
     if (t === "en uso") return "uso-interno";
     if (t.includes("remodela")) return "remodelacion";
@@ -213,13 +221,14 @@ function procesarCSV(csvTexto, fechaReferencia) {
   }
 
   const TAB_PROPIEDADES = filasDatos.map((f) => {
+    const propiedad = f[idxPropiedad].trim();
     const arrendatario = (f[idxArrendatario] || "").trim();
     const textoMesPasado = idxMesPasado !== undefined ? f[idxMesPasado] : "";
     return {
-      propiedad: f[idxPropiedad].trim(),
+      propiedad,
       arrendatario,
       garantiaRaw: idxGarantia !== -1 ? (f[idxGarantia] || "").trim() : "",
-      categoria: categoriaPropiedad(textoMesPasado, arrendatario !== ""),
+      categoria: categoriaPropiedad(propiedad, textoMesPasado, arrendatario !== ""),
       vencimientoContrato: "En construcción",
       montoUF: "En construcción",
     };

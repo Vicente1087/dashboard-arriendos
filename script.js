@@ -183,11 +183,36 @@ function claseFila(p, contrato) {
   return contrato ? "fila-arrendada" : "fila-falta-info";
 }
 
+// Categorías que no necesitan ficha de contrato - se muestran con una sola
+// etiqueta en la columna Arrendatario y un guión limpio en el resto, en vez
+// de repetir la misma palabra 5 veces por fila.
+const ETIQUETA_CATEGORIA = {
+  "uso-interno": "Uso interno",
+  remodelacion: "En remodelación",
+  vacante: "Desocupada / Disponible",
+};
+
 function pintarTabPropiedades() {
   const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
   const tbody = document.getElementById("tabla-propiedades");
   tbody.innerHTML = estado.TAB_PROPIEDADES.map((p) => {
     const contrato = CONTRATOS_LOCAL[p.propiedad];
+    const etiqueta = ETIQUETA_CATEGORIA[p.categoria];
+
+    if (etiqueta) {
+      return `
+        <tr class="${claseFila(p, contrato)}">
+          <td>${p.propiedad}</td>
+          <td>${etiqueta}</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      `;
+    }
+
     const arrendatario = (contrato && contrato.arrendatario) || p.arrendatario;
     return `
       <tr class="${claseFila(p, contrato)}">
