@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-05T10:42:17.861Z
+// Última actualización: 2026-08-05T10:47:36.490Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-05T10:42:17.865Z";
+const ULTIMA_ACTUALIZACION = "2026-08-05T10:47:36.493Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
@@ -75,7 +75,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Ahumada 312,  Of.720",
     "arrendatario": "",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -83,7 +82,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Carmén Sylva 2315, Dpto 507",
     "arrendatario": "Felipe Eduardo Bustos",
     "garantiaRaw": "186.667,00",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -91,7 +89,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Carmén Sylva 2850, Of. 3",
     "arrendatario": "Reinoso Vivanco",
     "garantiaRaw": "160.670",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -99,7 +96,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "11 de Septiembre 2909, Dpto 810",
     "arrendatario": "Héctor Patricio Magna Paula Macarena Valenzuela Ramirez",
     "garantiaRaw": "436.795",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -107,7 +103,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Napoleón 3565, Of. 605 + Estacionamiento 62",
     "arrendatario": "Centro Terapeutico y de Formación Omega (Mariano Riquelme y/o Jason Cueto)",
     "garantiaRaw": "330.937",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -115,7 +110,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Callao 3600 Dpto 405 (Hendaya)",
     "arrendatario": "Jennifer Armijo o Manuel Armijo",
     "garantiaRaw": "450.000",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -123,7 +117,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Callao 3600 Dpto 305 (Hendaya)",
     "arrendatario": "Elsa Patricia Arrigada y Macarena San Martin",
     "garantiaRaw": "Pago 626.667",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -131,7 +124,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
     "arrendatario": "Patricio Eugenio Rojas",
     "garantiaRaw": "520.000",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -139,7 +131,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Málaga 115, Of. 605",
     "arrendatario": "Paulina Andrea Acevedo",
     "garantiaRaw": "Garantia 300.000",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -147,7 +138,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Madison Vitacura 2909, Of. 815 Estacionamiento 201",
     "arrendatario": "Benjamin Letelier",
     "garantiaRaw": "275.000",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -155,7 +145,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
     "arrendatario": "Max Spiess",
     "garantiaRaw": "30,5 UF (1.195.587)",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -163,7 +152,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Versalles 3036, Estacionamiento 19",
     "arrendatario": "mauricio marambio",
     "garantiaRaw": "Garantia 90.000",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -171,7 +159,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Versalles 3036, Bodega 19",
     "arrendatario": "",
     "garantiaRaw": "",
-    "categoria": "uso-interno",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -179,7 +166,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
     "arrendatario": "Servicios Odontologicos SpA",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -187,7 +173,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
     "arrendatario": "",
     "garantiaRaw": "",
-    "categoria": "vacante",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -195,7 +180,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Málaga 115, Of 710, Estacionamiento 31",
     "arrendatario": "Fernanda Quiroz",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -203,7 +187,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "La Dehesa 1201, Estacionamiento 298",
     "arrendatario": "",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -211,7 +194,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "La Dehesa 1201, Estacionamiento 299",
     "arrendatario": "",
     "garantiaRaw": "",
-    "categoria": "vacante",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -219,7 +201,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Presidente Riesco 4123 Dpto 72, Estacionamiento 24, Bodega ..",
     "arrendatario": "",
     "garantiaRaw": "",
-    "categoria": "uso-interno",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -227,7 +208,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Estacionamiento 6 Carmen Sylva",
     "arrendatario": "Osvaldo Ignacio Garcia",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -235,7 +215,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Bodega 4 Carmen Sylva 2315",
     "arrendatario": "José Alfredo Ortega Jimenez",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -243,7 +222,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
     "arrendatario": "Geotech",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -251,7 +229,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Estacionamiento 201 Madison (que se empieza arrendar aparte)",
     "arrendatario": "Hernán Javier Peñafiel Dobud Arquitecto Hernando de Aguirre 731, Dpto 502, Casado, hpenafie@planvertical.com 5698255938",
     "garantiaRaw": "Zañartu Ingenieros",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -259,7 +236,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Málaga 115. Estacionamiento 143",
     "arrendatario": "Carlos Contreras",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -267,7 +243,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Bodega 46 de Málaga 115",
     "arrendatario": "Joaquin Salvador Bustos / Maria Ignacia Bustos Hevia",
     "garantiaRaw": "",
-    "categoria": "arrendada",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
@@ -275,7 +250,6 @@ const TAB_PROPIEDADES = [
     "propiedad": "Presidente Riesco 4123 Dpto 78, Estacionamiento Bodega ..",
     "arrendatario": "",
     "garantiaRaw": "",
-    "categoria": "remodelacion",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   }

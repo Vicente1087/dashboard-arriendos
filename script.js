@@ -175,10 +175,10 @@ function celdaGarantia(contrato, garantiaRaw) {
   return `<span class="garantia-cruda">${garantiaRaw || "-"}</span>`;
 }
 
-function claseFila(p, contrato) {
-  if (p.categoria === "uso-interno") return "fila-uso-interno";
-  if (p.categoria === "remodelacion") return "fila-remodelacion";
-  if (p.categoria === "vacante") return "fila-vacante";
+function claseFila(categoria, contrato) {
+  if (categoria === "uso-interno") return "fila-uso-interno";
+  if (categoria === "remodelacion") return "fila-remodelacion";
+  if (categoria === "vacante") return "fila-vacante";
   // categoria "arrendada": verde si ya tenemos su ficha, rojo si falta
   return contrato ? "fila-arrendada" : "fila-falta-info";
 }
@@ -194,14 +194,16 @@ const ETIQUETA_CATEGORIA = {
 
 function pintarTabPropiedades() {
   const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
+  const ESTADOS_LOCAL = typeof ESTADOS !== "undefined" ? ESTADOS : {};
   const tbody = document.getElementById("tabla-propiedades");
   tbody.innerHTML = estado.TAB_PROPIEDADES.map((p) => {
     const contrato = CONTRATOS_LOCAL[p.propiedad];
-    const etiqueta = ETIQUETA_CATEGORIA[p.categoria];
+    const categoria = ESTADOS_LOCAL[p.propiedad] || "arrendada";
+    const etiqueta = ETIQUETA_CATEGORIA[categoria];
 
     if (etiqueta) {
       return `
-        <tr class="${claseFila(p, contrato)}">
+        <tr class="${claseFila(categoria, contrato)}">
           <td>${p.propiedad}</td>
           <td>${etiqueta}</td>
           <td>-</td>
@@ -215,7 +217,7 @@ function pintarTabPropiedades() {
 
     const arrendatario = (contrato && contrato.arrendatario) || p.arrendatario;
     return `
-      <tr class="${claseFila(p, contrato)}">
+      <tr class="${claseFila(categoria, contrato)}">
         <td>${p.propiedad}</td>
         <td>${celdaArrendatario(arrendatario, contrato)}</td>
         <td>${(contrato && contrato.aliasCuenta) || `<span class="dato-faltante">Falta info</span>`}</td>

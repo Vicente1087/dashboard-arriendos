@@ -1,3 +1,16 @@
+// Estado de cada propiedad para la pestaña Propiedades/Contratos, a mano
+// (ya no se adivina del Sheet - daba problemas con tildes/espacios/palabras
+// nuevas). Si una propiedad NO aparece acá, se asume "arrendada" por defecto
+// (es el caso más común) - solo hay que listar las que NO son "arrendada".
+// Valores válidos: "uso-interno", "remodelacion", "vacante".
+const ESTADOS = {
+  "Versalles 3036, Bodega 19": "uso-interno",
+  "Presidente Riesco 4123 Dpto 72, Estacionamiento 24, Bodega ..": "uso-interno",
+  "Presidente Riesco 4123 Dpto 78, Estacionamiento Bodega ..": "remodelacion",
+  "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)": "vacante",
+  "La Dehesa 1201, Estacionamiento 299": "vacante",
+};
+
 // Datos de contratos mantenidos A MANO (no vienen del Google Sheet, no se
 // borran cuando se actualizan los datos de arriendo). Se combinan con la lista
 // de propiedades por el nombre EXACTO de la propiedad.
@@ -106,5 +119,5 @@ const CONTRATOS = {
 };
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { CONTRATOS };
+  module.exports = { CONTRATOS, ESTADOS };
 }

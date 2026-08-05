@@ -11,13 +11,6 @@ const PRIMER_ANIO_CON_DATOS = 2020;
 // Si tienes más casos así, avísame y los agrego aquí.
 const GRUPOS_VINCULADOS = [["La Dehesa 1201, Estacionamiento 298", "La Dehesa 1201, Estacionamiento 299"]];
 
-// Propiedades donde el estado automático no es confiable (ej. la administra
-// alguien más aparte, así que no sabemos si está ocupada o no) - se fuerzan
-// a "arrendada" para que caigan en "falta información" hasta confirmar.
-const OVERRIDES_CATEGORIA = {
-  "Ahumada 312,  Of.720": "arrendada", // la administra el papá directamente, estado real por confirmar (OJO: dos espacios antes de "Of.720", así está escrito en el Sheet)
-};
-
 // --- Parser de CSV simple: soporta campos entre comillas con comas adentro,
 // como pasa con nombres de propiedad tipo "Carmén Sylva 2315, Dpto 507". ---
 function parseCSV(texto) {
@@ -205,34 +198,17 @@ function procesarCSV(csvTexto, fechaReferencia) {
     TAB_ANIO.totalesAnioCompleto[a] = totalRangoMeses(a, 0, 11);
   }
 
-  // Categoría de cada propiedad para la pestaña Propiedades/Contratos - a propósito
-  // NO depende de si pagó justo este mes (eso es tema de la pestaña Mes), sino de si
-  // tiene un arrendatario asignado (dato fijo del Sheet) y del texto de la última
-  // celda del mes cerrado, para pescar "En uso" / "En remodelación" / "Desocupado".
-  const idxMesPasado = columnasPorMes[claveMesPasado];
-  function categoriaPropiedad(nombrePropiedad, textoCeldaMesPasado, tieneArrendatario) {
-    if (nombrePropiedad in OVERRIDES_CATEGORIA) return OVERRIDES_CATEGORIA[nombrePropiedad];
-    const t = (textoCeldaMesPasado || "").trim().toLowerCase();
-    if (t === "en uso") return "uso-interno";
-    if (t.includes("remodela")) return "remodelacion";
-    if (t.includes("desocup") || t.includes("disponib") || t.includes("diposnible")) return "vacante";
-    if (esNumero(textoCeldaMesPasado || "") || tieneArrendatario) return "arrendada";
-    return "vacante";
-  }
-
-  const TAB_PROPIEDADES = filasDatos.map((f) => {
-    const propiedad = f[idxPropiedad].trim();
-    const arrendatario = (f[idxArrendatario] || "").trim();
-    const textoMesPasado = idxMesPasado !== undefined ? f[idxMesPasado] : "";
-    return {
-      propiedad,
-      arrendatario,
-      garantiaRaw: idxGarantia !== -1 ? (f[idxGarantia] || "").trim() : "",
-      categoria: categoriaPropiedad(propiedad, textoMesPasado, arrendatario !== ""),
-      vencimientoContrato: "En construcción",
-      montoUF: "En construcción",
-    };
-  });
+  // El estado de cada propiedad (arrendada/uso interno/remodelación/vacante) para
+  // la pestaña Propiedades/Contratos ya NO se adivina del Sheet (daba problemas
+  // con tildes, espacios y palabras nuevas) - se maneja a mano en contratos.js,
+  // junto a ESTADOS. Acá solo pasamos los datos crudos que sí vienen del Sheet.
+  const TAB_PROPIEDADES = filasDatos.map((f) => ({
+    propiedad: f[idxPropiedad].trim(),
+    arrendatario: (f[idxArrendatario] || "").trim(),
+    garantiaRaw: idxGarantia !== -1 ? (f[idxGarantia] || "").trim() : "",
+    vencimientoContrato: "En construcción",
+    montoUF: "En construcción",
+  }));
 
   return { TAB_MES, TAB_ANIO, TAB_PROPIEDADES };
 }
