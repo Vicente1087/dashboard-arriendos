@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-05T19:47:07.035Z
+// Última actualización: 2026-08-06T14:23:44.815Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-05T19:47:07.037Z";
+const ULTIMA_ACTUALIZACION = "2026-08-06T14:23:44.816Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
@@ -9,7 +9,7 @@ const TAB_MES = {
   "actual": {
     "total": 3749296,
     "pagando": 14,
-    "totalPropiedades": 22,
+    "totalPropiedades": 23,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
       "Callao 3600 Dpto 305 (Hendaya)",
@@ -18,17 +18,19 @@ const TAB_MES = {
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
       "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
-      "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76"
+      "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76",
+      "https://vicente1087.github.io/dashboard-arriendos/"
     ]
   },
   "pasado": {
     "total": 6578513,
     "pagando": 19,
-    "totalPropiedades": 22,
+    "totalPropiedades": 23,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
       "Callao 3600 Dpto 305 (Hendaya)",
-      "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76"
+      "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76",
+      "https://vicente1087.github.io/dashboard-arriendos/"
     ]
   },
   "totalMesAntesDelPasado": 7154797,
@@ -249,6 +251,13 @@ const TAB_PROPIEDADES = [
   },
   {
     "propiedad": "Augusto Ovalle 1360 Dpto 801, Estacionamiento, Bodega",
+    "arrendatario": "",
+    "garantiaRaw": "",
+    "vencimientoContrato": "En construcción",
+    "montoUF": "En construcción"
+  },
+  {
+    "propiedad": "https://vicente1087.github.io/dashboard-arriendos/",
     "arrendatario": "",
     "garantiaRaw": "",
     "vencimientoContrato": "En construcción",
