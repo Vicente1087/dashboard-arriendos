@@ -116,6 +116,9 @@ function procesarCSV(csvTexto, fechaReferencia, estadosManuales) {
   for (let i = 2; i < filas.length; i++) {
     const propiedadTxt = (filas[i][idxPropiedad] || "").trim();
     if (propiedadTxt.toLowerCase() === "total") break;
+    // Ignora notas/links pegados por error en la columna Propiedad (ej. un
+    // link guardado ahí solo como recordatorio, no una propiedad real).
+    if (propiedadTxt.toLowerCase().startsWith("http")) continue;
     if (propiedadTxt !== "") filasDatos.push(filas[i]);
   }
 
