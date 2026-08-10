@@ -1,29 +1,26 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-07T10:04:05.582Z
+// Última actualización: 2026-08-10T11:23:59.737Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-07T10:04:05.584Z";
+const ULTIMA_ACTUALIZACION = "2026-08-10T11:23:59.740Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
   "mesAntesDelPasado": "2026-06",
   "actual": {
-    "total": 4525349,
-    "pagando": 17,
-    "totalPropiedades": 21,
+    "total": 5342164,
+    "pagando": 18,
+    "totalPropiedades": 20,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
-      "Callao 3600 Dpto 305 (Hendaya)",
-      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
-      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9"
+      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16"
     ]
   },
   "pasado": {
     "total": 6578513,
     "pagando": 19,
-    "totalPropiedades": 21,
+    "totalPropiedades": 20,
     "pendientes": [
-      "Carmén Sylva 2850, Of. 3",
-      "Callao 3600 Dpto 305 (Hendaya)"
+      "Carmén Sylva 2850, Of. 3"
     ]
   },
   "totalMesAntesDelPasado": 7154797,

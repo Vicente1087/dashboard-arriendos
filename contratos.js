@@ -10,6 +10,7 @@ const ESTADOS = {
   "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)": "vacante",
   "Ahumada 312,  Of.720": "vacante",
   "Augusto Ovalle 1360 Dpto 801, Estacionamiento, Bodega": "uso-interno",
+  "Callao 3600 Dpto 305 (Hendaya)": "vacante",
 };
 
 // Datos de contratos mantenidos A MANO (no vienen del Google Sheet, no se
