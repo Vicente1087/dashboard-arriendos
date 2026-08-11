@@ -301,12 +301,14 @@ h3 {
 .color-remodelacion { background: #a142f4; }
 .color-vacante { background: #f4b400; }
 .color-falta-info { background: #ea4335; }
+.color-vencido { background: #e8710a; }
 
 tr.fila-arrendada { background: #e6f7ea; }
 tr.fila-uso-interno { background: #e8f0fe; }
 tr.fila-remodelacion { background: #f4e6fd; }
 tr.fila-vacante { background: #fff6da; }
 tr.fila-falta-info { background: #fce8e6; }
+tr.fila-vencido { background: #fdecdb; }
 
 .con-tooltip {
   position: relative;

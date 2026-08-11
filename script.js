@@ -175,12 +175,20 @@ function celdaGarantia(contrato, garantiaRaw) {
   return `<span class="garantia-cruda">${garantiaRaw || "-"}</span>`;
 }
 
+function contratoVencido(contrato) {
+  if (!contrato || !contrato.vencimientoContrato) return false;
+  const hoy = new Date();
+  const fechaVencimiento = new Date(contrato.vencimientoContrato + "T00:00:00");
+  return fechaVencimiento < hoy;
+}
+
 function claseFila(categoria, contrato) {
   if (categoria === "uso-interno") return "fila-uso-interno";
   if (categoria === "remodelacion") return "fila-remodelacion";
   if (categoria === "vacante") return "fila-vacante";
-  // categoria "arrendada": verde si ya tenemos su ficha, rojo si falta
-  return contrato ? "fila-arrendada" : "fila-falta-info";
+  // categoria "arrendada": verde si está al día, naranjo si el contrato venció, rojo si falta la ficha
+  if (!contrato) return "fila-falta-info";
+  return contratoVencido(contrato) ? "fila-vencido" : "fila-arrendada";
 }
 
 // Categorías que no necesitan ficha de contrato - se muestran con una sola
