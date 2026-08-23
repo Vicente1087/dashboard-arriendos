@@ -189,13 +189,70 @@ function contratoVencido(contrato) {
   return fechaVencimiento < hoy;
 }
 
+// Categoría final de una propiedad (una de las 6 de la leyenda), usada tanto
+// para pintar la fila como para la dona de resumen.
+function categoriaFinal(categoria, contrato) {
+  if (categoria === "uso-interno") return "uso-interno";
+  if (categoria === "remodelacion") return "remodelacion";
+  if (categoria === "vacante") return "vacante";
+  // categoria "arrendada": al día si tiene ficha vigente, vencido si la ficha expiró, falta info si no hay ficha
+  if (!contrato) return "falta-info";
+  return contratoVencido(contrato) ? "vencido" : "arrendada";
+}
+
 function claseFila(categoria, contrato) {
-  if (categoria === "uso-interno") return "fila-uso-interno";
-  if (categoria === "remodelacion") return "fila-remodelacion";
-  if (categoria === "vacante") return "fila-vacante";
-  // categoria "arrendada": verde si está al día, naranjo si el contrato venció, rojo si falta la ficha
-  if (!contrato) return "fila-falta-info";
-  return contratoVencido(contrato) ? "fila-vencido" : "fila-arrendada";
+  return `fila-${categoriaFinal(categoria, contrato)}`;
+}
+
+const COLOR_CATEGORIA = {
+  arrendada: "#34a853",
+  "uso-interno": "#4285f4",
+  remodelacion: "#a142f4",
+  vacante: "#f4b400",
+  vencido: "#00897b",
+  "falta-info": "#ea4335",
+};
+const ORDEN_CATEGORIAS = ["arrendada", "uso-interno", "remodelacion", "vacante", "vencido", "falta-info"];
+
+function pintarDonaEstados() {
+  const contenedor = document.getElementById("dona-estados");
+  if (!contenedor) return;
+  const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
+  const ESTADOS_LOCAL = typeof ESTADOS !== "undefined" ? ESTADOS : {};
+
+  const conteo = {};
+  for (const p of estado.TAB_PROPIEDADES) {
+    const categoria = ESTADOS_LOCAL[p.propiedad] || "arrendada";
+    const contrato = CONTRATOS_LOCAL[p.propiedad];
+    const final = categoriaFinal(categoria, contrato);
+    conteo[final] = (conteo[final] || 0) + 1;
+  }
+  const total = estado.TAB_PROPIEDADES.length;
+  if (total === 0) return;
+
+  const r = 34;
+  const circunferencia = 2 * Math.PI * r;
+  let acumulado = 0;
+  const segmentos = ORDEN_CATEGORIAS.filter((k) => conteo[k] > 0)
+    .map((k) => {
+      const largo = (conteo[k] / total) * circunferencia;
+      const offset = -acumulado;
+      acumulado += largo;
+      return `<circle cx="45" cy="45" r="${r}" fill="none" stroke="${COLOR_CATEGORIA[k]}" stroke-width="16" stroke-dasharray="${largo} ${circunferencia - largo}" stroke-dashoffset="${offset}" />`;
+    })
+    .join("");
+
+  const porcentajes = ORDEN_CATEGORIAS.filter((k) => conteo[k] > 0)
+    .map((k) => {
+      const pct = Math.round((conteo[k] / total) * 100);
+      return `<div class="dona-item"><span class="dona-punto" style="background:${COLOR_CATEGORIA[k]}"></span>${pct}% (${conteo[k]})</div>`;
+    })
+    .join("");
+
+  contenedor.innerHTML = `
+    <svg viewBox="0 0 90 90" width="90" height="90" style="transform: rotate(-90deg)">${segmentos}</svg>
+    <div class="dona-porcentajes">${porcentajes}</div>
+  `;
 }
 
 // Categorías que no necesitan ficha de contrato - se muestran con una sola
@@ -208,6 +265,7 @@ const ETIQUETA_CATEGORIA = {
 };
 
 function pintarTabPropiedades() {
+  pintarDonaEstados();
   const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
   const ESTADOS_LOCAL = typeof ESTADOS !== "undefined" ? ESTADOS : {};
   const tbody = document.getElementById("tabla-propiedades");
