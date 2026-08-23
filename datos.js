@@ -1,13 +1,13 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-13T13:21:51.334Z
+// Última actualización: 2026-08-23T12:49:26.238Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-13T13:21:51.334Z";
+const ULTIMA_ACTUALIZACION = "2026-08-23T12:49:26.238Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
   "mesAntesDelPasado": "2026-06",
   "actual": {
-    "total": 5592164,
+    "total": 6680309,
     "pagando": 19,
     "totalPropiedades": 20,
     "pendientes": [
@@ -176,7 +176,7 @@ const TAB_PROPIEDADES = [
   {
     "propiedad": "La Dehesa 1201, Estacionamiento 299",
     "arrendatario": "",
-    "garantiaRaw": "",
+    "garantiaRaw": "1.088.145",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
