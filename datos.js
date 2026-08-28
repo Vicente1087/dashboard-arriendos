@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-27T22:03:12.621Z
+// Última actualización: 2026-08-28T22:00:12.045Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-27T22:03:12.621Z";
+const ULTIMA_ACTUALIZACION = "2026-08-28T22:00:12.045Z";
 const TAB_MES = {
   "mesActual": "2026-08",
   "mesPasado": "2026-07",
@@ -155,7 +155,7 @@ const TAB_PROPIEDADES = [
   {
     "propiedad": "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
     "arrendatario": "",
-    "garantiaRaw": "",
+    "garantiaRaw": "858.060",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
