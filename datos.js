@@ -1,12 +1,36 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-08-31T19:02:59.051Z
+// Última actualización: 2026-09-01T16:20:34.919Z
 
-const ULTIMA_ACTUALIZACION = "2026-08-31T19:02:59.051Z";
+const ULTIMA_ACTUALIZACION = "2026-09-01T16:20:34.919Z";
 const TAB_MES = {
-  "mesActual": "2026-08",
-  "mesPasado": "2026-07",
-  "mesAntesDelPasado": "2026-06",
+  "mesActual": "2026-09",
+  "mesPasado": "2026-08",
+  "mesAntesDelPasado": "2026-07",
   "actual": {
+    "total": 524007,
+    "pagando": 3,
+    "totalPropiedades": 20,
+    "pendientes": [
+      "Carmén Sylva 2315, Dpto 507",
+      "Carmén Sylva 2850, Of. 3",
+      "11 de Septiembre 2909, Dpto 810",
+      "Callao 3600 Dpto 405 (Hendaya)",
+      "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
+      "Málaga 115, Of. 605",
+      "Madison Vitacura 2909, Of. 815 Estacionamiento 201",
+      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
+      "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
+      "Málaga 115, Of 710, Estacionamiento 31",
+      "La Dehesa 1201, Estacionamiento 298",
+      "La Dehesa 1201, Estacionamiento 299",
+      "Estacionamiento 6 Carmen Sylva",
+      "Bodega 4 Carmen Sylva 2315",
+      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
+      "Málaga 115. Estacionamiento 143",
+      "Bodega 46 de Málaga 115"
+    ]
+  },
+  "pasado": {
     "total": 6680309,
     "pagando": 19,
     "totalPropiedades": 20,
@@ -14,33 +38,27 @@ const TAB_MES = {
       "Carmén Sylva 2850, Of. 3"
     ]
   },
-  "pasado": {
-    "total": 6864444,
-    "pagando": 20,
-    "totalPropiedades": 20,
-    "pendientes": []
-  },
-  "totalMesAntesDelPasado": 7154797,
+  "totalMesAntesDelPasado": 6864444,
   "totalesMismoMesAniosAnteriores": {
-    "2020": 2653207,
-    "2021": 2085664,
-    "2022": 4251214,
-    "2023": 4425293,
-    "2024": 5329508,
-    "2025": 6750506
+    "2020": 2202891,
+    "2021": 2251159,
+    "2022": 4037992,
+    "2023": 4794483,
+    "2024": 6201975,
+    "2025": 6302099
   }
 };
 const TAB_ANIO = {
   "anioActual": 2026,
-  "mesesIncluidos": 7,
-  "acumuladoAnioActual": 48314497,
+  "mesesIncluidos": 8,
+  "acumuladoAnioActual": 54994806,
   "acumuladoMismoRangoAniosAnteriores": {
-    "2020": 16215299,
-    "2021": 19231079,
-    "2022": 27597419,
-    "2023": 31852656,
-    "2024": 36796360,
-    "2025": 43676955
+    "2020": 18418190,
+    "2021": 21482238,
+    "2022": 31635411,
+    "2023": 36647139,
+    "2024": 42998335,
+    "2025": 49979054
   },
   "anioPasado": 2025,
   "totalAnioPasado": 73515515,
