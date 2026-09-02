@@ -117,6 +117,15 @@ const CONTRATOS = {
     garantia: 50000,
     driveContrato: "https://drive.google.com/file/d/1EQE4_R0mhOsuzuNaQsO5IeBAL_kMoCpM/view?usp=sharing",
   },
+  "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)": {
+    arrendatario: "Sofia Maria Donoso Toro",
+    aliasCuenta: "SOFIA MARIA DONOSO TORO",
+    telefono: "+56 9 7452 2663",
+    correo: "sofiadonoso96@gmail.com",
+    vencimientoContrato: "2028-08-31",
+    garantia: 858060, // OJO: falta confirmar el monto UF de la renta, avísame y lo agrego
+    driveContrato: "https://drive.google.com/file/d/1h-ue1ZVEkhlVLs6x72f3DX2JZiufHixC/view?usp=drive_link",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {

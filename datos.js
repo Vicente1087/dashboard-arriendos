@@ -1,33 +1,27 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-02T07:14:38.269Z
+// Última actualización: 2026-09-02T07:33:18.794Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-02T07:14:38.269Z";
+const ULTIMA_ACTUALIZACION = "2026-09-02T07:33:18.797Z";
 const TAB_MES = {
   "mesActual": "2026-09",
   "mesPasado": "2026-08",
   "mesAntesDelPasado": "2026-07",
   "actual": {
-    "total": 524007,
-    "pagando": 3,
+    "total": 2866758,
+    "pagando": 9,
     "totalPropiedades": 21,
     "pendientes": [
-      "Carmén Sylva 2315, Dpto 507",
       "Carmén Sylva 2850, Of. 3",
-      "11 de Septiembre 2909, Dpto 810",
-      "Callao 3600 Dpto 405 (Hendaya)",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
-      "Málaga 115, Of. 605",
       "Madison Vitacura 2909, Of. 815 Estacionamiento 201",
       "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
       "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
-      "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
       "Málaga 115, Of 710, Estacionamiento 31",
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
       "Estacionamiento 6 Carmen Sylva",
       "Bodega 4 Carmen Sylva 2315",
       "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
-      "Málaga 115. Estacionamiento 143",
       "Bodega 46 de Málaga 115"
     ]
   },
@@ -174,7 +168,7 @@ const TAB_PROPIEDADES = [
   },
   {
     "propiedad": "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
-    "arrendatario": "",
+    "arrendatario": "Sofia Maria Donoso",
     "garantiaRaw": "858.060",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
