@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-02T08:13:10.994Z
+// Última actualización: 2026-09-02T08:19:42.219Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-02T08:13:10.997Z";
+const ULTIMA_ACTUALIZACION = "2026-09-02T08:19:42.222Z";
 const TAB_MES = {
   "mesActual": "2026-09",
   "mesPasado": "2026-08",
@@ -30,8 +30,7 @@ const TAB_MES = {
     "pagando": 19,
     "totalPropiedades": 21,
     "pendientes": [
-      "Carmén Sylva 2850, Of. 3",
-      "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)"
+      "Carmén Sylva 2850, Of. 3"
     ]
   },
   "totalMesAntesDelPasado": 6864444,

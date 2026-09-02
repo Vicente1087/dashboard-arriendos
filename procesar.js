@@ -86,9 +86,11 @@ function clasificarCelda(valor) {
   const texto = (valor || "").trim();
   if (esNumero(texto)) return { estado: "pagado", renta: aNumero(texto) };
   if (texto.toLowerCase() === "en uso") return { estado: "uso-interno", renta: null };
-  // Todo lo demás (Desocupado, blanco, "se fue", comentarios de pagos atrasados, etc.)
-  // se trata igual: no hay un número confiable que registrar ese mes.
-  return { estado: "vacante", renta: null };
+  if (texto === "") return { estado: "vacante", renta: null }; // celda vacía: sin explicación, vale la pena seguirla
+  // Cualquier otro texto (Desocupado, Disponible, "se fue", una nota, etc.) es una
+  // explicación de por qué ese mes no generó renta - no importa la palabra exacta,
+  // así no dependemos de que esté bien escrita. No cuenta como pendiente de cobranza.
+  return { estado: "no-aplica", renta: null };
 }
 
 // Toma el texto crudo del CSV y devuelve { TAB_MES, TAB_ANIO, TAB_PROPIEDADES }
