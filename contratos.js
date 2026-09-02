@@ -123,7 +123,9 @@ const CONTRATOS = {
     telefono: "+56 9 7452 2663",
     correo: "sofiadonoso96@gmail.com",
     vencimientoContrato: "2028-08-31",
-    garantia: 858060, // OJO: falta confirmar el monto UF de la renta, avísame y lo agrego
+    montoUF: 21,
+    notaMontoUF: "22 UF si se paga después del día 5 de cada mes",
+    garantia: 858060,
     driveContrato: "https://drive.google.com/file/d/1h-ue1ZVEkhlVLs6x72f3DX2JZiufHixC/view?usp=drive_link",
   },
 };
