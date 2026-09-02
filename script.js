@@ -191,12 +191,19 @@ function contratoVencido(contrato) {
 
 // Categoría final de una propiedad (una de las 6 de la leyenda), usada tanto
 // para pintar la fila como para la dona de resumen.
+// "Completa" = tiene los 3 datos que realmente importan (vencimiento, UF,
+// garantía). Tener solo el alias de banco u otro dato suelto no cuenta -
+// si no, la fila se pondría verde con una ficha todavía a medio llenar.
+function contratoCompleto(contrato) {
+  return !!(contrato && contrato.vencimientoContrato && contrato.montoUF && contrato.garantia);
+}
+
 function categoriaFinal(categoria, contrato) {
   if (categoria === "uso-interno") return "uso-interno";
   if (categoria === "remodelacion") return "remodelacion";
   if (categoria === "vacante") return "vacante";
-  // categoria "arrendada": al día si tiene ficha vigente, vencido si la ficha expiró, falta info si no hay ficha
-  if (!contrato) return "falta-info";
+  // categoria "arrendada": al día si la ficha está completa y vigente, vencido si expiró, falta info si no
+  if (!contratoCompleto(contrato)) return "falta-info";
   return contratoVencido(contrato) ? "vencido" : "arrendada";
 }
 

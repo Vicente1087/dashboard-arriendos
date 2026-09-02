@@ -128,6 +128,15 @@ const CONTRATOS = {
     garantia: 858060,
     driveContrato: "https://drive.google.com/file/d/1h-ue1ZVEkhlVLs6x72f3DX2JZiufHixC/view?usp=drive_link",
   },
+  "11 de Septiembre 2909, Dpto 810": {
+    // Ficha a medio llenar a propósito - falta vencimiento, UF y garantía,
+    // así que sigue en rojo hasta completarla.
+    aliasCuenta: "PAULA MACARENA VALENZUELA RAMIREZ",
+  },
+  "Callao 3600 Dpto 405 (Hendaya)": {
+    // Igual que la anterior: ficha a medio llenar, sigue en rojo.
+    aliasCuenta: "ARMIJO TALCAN MANUEL ANDRES ANTONIO",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
