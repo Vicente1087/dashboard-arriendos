@@ -7,7 +7,6 @@ const ESTADOS = {
   "Versalles 3036, Bodega 19": "uso-interno",
   "Presidente Riesco 4123 Dpto 72, Estacionamiento 24, Bodega ..": "uso-interno",
   "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76": "vacante",
-  "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)": "vacante",
   "Ahumada 312,  Of.720": "vacante",
   "Augusto Ovalle 1360 Dpto 801, Estacionamiento, Bodega": "uso-interno",
   "Callao 3600 Dpto 305 (Hendaya)": "vacante",
