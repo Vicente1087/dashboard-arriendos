@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-04T09:22:48.289Z
+// Última actualización: 2026-09-04T09:23:30.422Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-04T09:22:48.291Z";
+const ULTIMA_ACTUALIZACION = "2026-09-04T09:23:30.425Z";
 const TAB_MES = {
   "mesActual": "2026-09",
   "mesPasado": "2026-08",

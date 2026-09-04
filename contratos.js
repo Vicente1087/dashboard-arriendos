@@ -150,6 +150,10 @@ const CONTRATOS = {
     // El "?" viene tal cual del banco (probablemente un caracter especial mal mostrado).
     aliasCuenta: "REINOSO ? VIVANCO LIMITADA",
   },
+  "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161": {
+    // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
+    aliasCuenta: "SERVICIOS ODONTOLOGICOS SPA",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
