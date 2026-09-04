@@ -137,6 +137,10 @@ const CONTRATOS = {
     // Igual que la anterior: ficha a medio llenar, sigue en rojo.
     aliasCuenta: "ARMIJO TALCAN MANUEL ANDRES ANTONIO",
   },
+  "Estacionamiento 6 Carmen Sylva": {
+    // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
+    aliasCuenta: "OSVALDO IGNACIO GAR",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
