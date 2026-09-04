@@ -486,3 +486,27 @@ h4 {
     font-size: 0.75rem;
   }
 }
+
+.pie-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  background: #eef1f5;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #616e7c;
+}
+
+.pie-pagina a {
+  color: #2f6feb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pie-pagina a:hover {
+  text-decoration: underline;
+}
