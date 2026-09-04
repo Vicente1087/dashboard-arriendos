@@ -145,6 +145,11 @@ const CONTRATOS = {
     // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
     aliasCuenta: "BENJAMIN LETELIER",
   },
+  "Carmén Sylva 2850, Of. 3": {
+    // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
+    // El "?" viene tal cual del banco (probablemente un caracter especial mal mostrado).
+    aliasCuenta: "REINOSO ? VIVANCO LIMITADA",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {

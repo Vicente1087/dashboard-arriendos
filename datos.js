@@ -1,33 +1,31 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-04T09:17:51.277Z
+// Última actualización: 2026-09-04T09:22:48.289Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-04T09:17:51.280Z";
+const ULTIMA_ACTUALIZACION = "2026-09-04T09:22:48.291Z";
 const TAB_MES = {
   "mesActual": "2026-09",
   "mesPasado": "2026-08",
   "mesAntesDelPasado": "2026-07",
   "actual": {
-    "total": 2644688,
-    "pagando": 9,
+    "total": 3257388,
+    "pagando": 11,
     "totalPropiedades": 21,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
       "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
-      "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
       "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
       "Málaga 115, Of 710, Estacionamiento 31",
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
-      "Estacionamiento 6 Carmen Sylva",
       "Bodega 4 Carmen Sylva 2315",
       "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
       "Bodega 46 de Málaga 115"
     ]
   },
   "pasado": {
-    "total": 6680309,
-    "pagando": 19,
+    "total": 6966448,
+    "pagando": 20,
     "totalPropiedades": 21,
     "pendientes": []
   },
@@ -44,7 +42,7 @@ const TAB_MES = {
 const TAB_ANIO = {
   "anioActual": 2026,
   "mesesIncluidos": 8,
-  "acumuladoAnioActual": 54994806,
+  "acumuladoAnioActual": 55280945,
   "acumuladoMismoRangoAniosAnteriores": {
     "2020": 18418190,
     "2021": 21482238,
