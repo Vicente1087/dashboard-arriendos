@@ -141,6 +141,10 @@ const CONTRATOS = {
     // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
     aliasCuenta: "OSVALDO IGNACIO GAR",
   },
+  "Madison Vitacura 2909, Of. 815 Estacionamiento 201": {
+    // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
+    aliasCuenta: "BENJAMIN LETELIER",
+  },
 };
 
 if (typeof module !== "undefined" && module.exports) {
