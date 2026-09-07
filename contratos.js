@@ -42,7 +42,9 @@ const CONTRATOS = {
   },
   "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120": {
     arrendatario: "Patricio Rojas Rosales",
-    aliasCuenta: "Patricio Eugenio Rojas Ro",
+    // A veces transfiere desde otra cuenta/banco y sale con el nombre completo -
+    // dejamos ambas variantes juntas para que Ctrl+F encuentre la fila con cualquiera.
+    aliasCuenta: "Patricio Eugenio Rojas Ro / PATRICIO EUGENIO ROJAS ROSALES",
     telefono: "+56 9 6728 1633",
     correo: "recta_provincia@hotmail.com",
     vencimientoContrato: "2027-03-30",
@@ -153,6 +155,10 @@ const CONTRATOS = {
   "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161": {
     // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
     aliasCuenta: "SERVICIOS ODONTOLOGICOS SPA",
+  },
+  "Bodega 46 de Málaga 115": {
+    // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
+    aliasCuenta: "BUSTOS HEVIA MARIA IGNACIA",
   },
 };
 
