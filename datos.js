@@ -1,20 +1,17 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-10T16:08:22.226Z
+// Última actualización: 2026-09-11T16:12:00.408Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-10T16:08:22.226Z";
+const ULTIMA_ACTUALIZACION = "2026-09-11T16:12:00.408Z";
 const TAB_MES = {
   "mesActual": "2026-09",
   "mesPasado": "2026-08",
   "mesAntesDelPasado": "2026-07",
   "actual": {
-    "total": 6476991,
-    "pagando": 17,
+    "total": 7351912,
+    "pagando": 20,
     "totalPropiedades": 21,
     "pendientes": [
-      "Carmén Sylva 2850, Of. 3",
-      "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
-      "La Dehesa 1201, Estacionamiento 298",
-      "La Dehesa 1201, Estacionamiento 299"
+      "Carmén Sylva 2850, Of. 3"
     ]
   },
   "pasado": {
