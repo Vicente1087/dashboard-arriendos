@@ -1,13 +1,13 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-15T16:38:42.724Z
+// Última actualización: 2026-09-16T16:32:00.468Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-15T16:38:42.724Z";
+const ULTIMA_ACTUALIZACION = "2026-09-16T16:32:00.468Z";
 const TAB_MES = {
   "mesActual": "2026-09",
   "mesPasado": "2026-08",
   "mesAntesDelPasado": "2026-07",
   "actual": {
-    "total": 7351912,
+    "total": 8268846,
     "pagando": 20,
     "totalPropiedades": 21,
     "pendientes": [
@@ -239,7 +239,7 @@ const TAB_PROPIEDADES = [
   {
     "propiedad": "Augusto Ovalle 1360 Dpto 801, Estacionamiento, Bodega",
     "arrendatario": "",
-    "garantiaRaw": "",
+    "garantiaRaw": "250.000",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   }
