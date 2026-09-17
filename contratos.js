@@ -6,7 +6,6 @@
 const ESTADOS = {
   "Versalles 3036, Bodega 19": "uso-interno",
   "Presidente Riesco 4123 Dpto 72, Estacionamiento 24, Bodega ..": "uso-interno",
-  "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76": "vacante",
   "Ahumada 312,  Of.720": "vacante",
   "Augusto Ovalle 1360 Dpto 801, Estacionamiento, Bodega": "uso-interno",
   "Callao 3600 Dpto 305 (Hendaya)": "vacante",
@@ -159,6 +158,17 @@ const CONTRATOS = {
   "Bodega 46 de Málaga 115": {
     // Ficha a medio llenar - falta vencimiento, UF y garantía, sigue en rojo.
     aliasCuenta: "BUSTOS HEVIA MARIA IGNACIA",
+  },
+  "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76": {
+    // Falta el alias banco - se agrega manualmente cuando llegue la primera transferencia.
+    arrendatario: "Francisco José Larios Goldenberg",
+    telefono: "+56 9 9293 8389",
+    correo: "fjlarios@uc.cl",
+    vencimientoContrato: "2027-09-30",
+    montoUF: 43,
+    notaMontoUF: "42 UF si se paga dentro de los primeros 5 días de cada mes",
+    garantia: 1719000,
+    driveContrato: "https://drive.google.com/file/d/1tUSmhTi7GSkLzueKaGtOmu7AfPlTL211/view?usp=drive_link",
   },
 };
 

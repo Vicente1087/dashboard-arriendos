@@ -1,28 +1,23 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-07T09:07:54.854Z
+// Última actualización: 2026-09-17T13:05:17.567Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-07T09:07:54.854Z";
+const ULTIMA_ACTUALIZACION = "2026-09-17T13:05:17.570Z";
 const TAB_MES = {
   "mesActual": "2026-09",
   "mesPasado": "2026-08",
   "mesAntesDelPasado": "2026-07",
   "actual": {
-    "total": 4785369,
-    "pagando": 15,
-    "totalPropiedades": 21,
+    "total": 8268846,
+    "pagando": 21,
+    "totalPropiedades": 22,
     "pendientes": [
-      "Carmén Sylva 2850, Of. 3",
-      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
-      "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
-      "Málaga 115, Of 710, Estacionamiento 31",
-      "La Dehesa 1201, Estacionamiento 298",
-      "La Dehesa 1201, Estacionamiento 299"
+      "Carmén Sylva 2850, Of. 3"
     ]
   },
   "pasado": {
     "total": 6966448,
     "pagando": 20,
-    "totalPropiedades": 21,
+    "totalPropiedades": 22,
     "pendientes": []
   },
   "totalMesAntesDelPasado": 6864444,
@@ -244,7 +239,7 @@ const TAB_PROPIEDADES = [
   {
     "propiedad": "Augusto Ovalle 1360 Dpto 801, Estacionamiento, Bodega",
     "arrendatario": "",
-    "garantiaRaw": "",
+    "garantiaRaw": "250.000",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   }
