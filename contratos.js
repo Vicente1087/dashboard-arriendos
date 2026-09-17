@@ -160,8 +160,8 @@ const CONTRATOS = {
     aliasCuenta: "BUSTOS HEVIA MARIA IGNACIA",
   },
   "Presidente Riesco 4123 Dpto 78, Estacionamiento 39 Bodega 76": {
-    // Falta el alias banco - se agrega manualmente cuando llegue la primera transferencia.
     arrendatario: "Francisco José Larios Goldenberg",
+    aliasCuenta: "FRANCISCO JOSE LARI",
     telefono: "+56 9 9293 8389",
     correo: "fjlarios@uc.cl",
     vencimientoContrato: "2027-09-30",
