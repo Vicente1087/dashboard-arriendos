@@ -15,7 +15,8 @@ function formatoCLP(numero) {
   return numero.toLocaleString("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });
 }
 
-function notaSegunDiaDelMes(dia) {
+function notaSegunDiaDelMes(dia, pendientes) {
+  if (pendientes === 0) return "✅ Todo al día — no queda ningún pago pendiente por registrar este mes.";
   if (dia <= 7) return "Recién empezando — es normal que todavía falten pagos por registrar.";
   if (dia <= 20) return "Mes en curso — todavía pueden faltar algunos pagos por registrar.";
   return "El mes ya está avanzado — si queda algo pendiente, vale la pena hacer seguimiento.";
@@ -72,7 +73,7 @@ function pintarTabMes() {
     `${nombreMes(TAB_MES.mesActual)} en curso · comparando contra ${nombreMes(TAB_MES.mesPasado)} (mes cerrado)`;
 
   document.getElementById("titulo-mes-actual").textContent = `Mes actual: ${nombreMes(TAB_MES.mesActual)}`;
-  document.getElementById("nota-mes-actual").textContent = notaSegunDiaDelMes(new Date().getDate());
+  document.getElementById("nota-mes-actual").textContent = notaSegunDiaDelMes(new Date().getDate(), TAB_MES.actual.pendientes.length);
   document.getElementById("actual-total").textContent = formatoCLP(TAB_MES.actual.total);
   document.getElementById("actual-pagando").textContent = `${TAB_MES.actual.pagando} / ${TAB_MES.actual.totalPropiedades}`;
   pintarLista("actual-pendientes", TAB_MES.actual.pendientes);

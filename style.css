@@ -260,6 +260,11 @@ h3 {
   color: #c94a4a;
 }
 
+.checklist li.vacio::before {
+  content: "✓ ";
+  color: #1f9254;
+}
+
 .vacio {
   color: #9aa5b1;
   font-style: italic;
