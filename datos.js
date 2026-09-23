@@ -1,18 +1,16 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-22T16:38:41.095Z
+// Última actualización: 2026-09-23T16:31:14.986Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-22T16:38:41.095Z";
+const ULTIMA_ACTUALIZACION = "2026-09-23T16:31:14.986Z";
 const TAB_MES = {
   "mesActual": "2026-09",
   "mesPasado": "2026-08",
   "mesAntesDelPasado": "2026-07",
   "actual": {
-    "total": 8268846,
-    "pagando": 21,
+    "total": 8555846,
+    "pagando": 22,
     "totalPropiedades": 22,
-    "pendientes": [
-      "Carmén Sylva 2850, Of. 3"
-    ]
+    "pendientes": []
   },
   "pasado": {
     "total": 6966448,
