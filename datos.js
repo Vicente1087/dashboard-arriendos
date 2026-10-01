@@ -1,44 +1,61 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-30T17:50:53.973Z
+// Última actualización: 2026-10-01T18:16:00.517Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-30T17:50:53.973Z";
+const ULTIMA_ACTUALIZACION = "2026-10-01T18:16:00.517Z";
 const TAB_MES = {
-  "mesActual": "2026-09",
-  "mesPasado": "2026-08",
-  "mesAntesDelPasado": "2026-07",
+  "mesActual": "2026-10",
+  "mesPasado": "2026-09",
+  "mesAntesDelPasado": "2026-08",
   "actual": {
+    "total": 2760127,
+    "pagando": 6,
+    "totalPropiedades": 22,
+    "pendientes": [
+      "Carmén Sylva 2315, Dpto 507",
+      "Carmén Sylva 2850, Of. 3",
+      "11 de Septiembre 2909, Dpto 810",
+      "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
+      "Málaga 115, Of. 605",
+      "Madison Vitacura 2909, Of. 815 Estacionamiento 201",
+      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
+      "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
+      "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
+      "Málaga 115, Of 710, Estacionamiento 31",
+      "La Dehesa 1201, Estacionamiento 298",
+      "La Dehesa 1201, Estacionamiento 299",
+      "Estacionamiento 6 Carmen Sylva",
+      "Bodega 4 Carmen Sylva 2315",
+      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
+      "Málaga 115. Estacionamiento 143"
+    ]
+  },
+  "pasado": {
     "total": 8555846,
     "pagando": 22,
     "totalPropiedades": 22,
     "pendientes": []
   },
-  "pasado": {
-    "total": 6966448,
-    "pagando": 20,
-    "totalPropiedades": 22,
-    "pendientes": []
-  },
-  "totalMesAntesDelPasado": 6864444,
+  "totalMesAntesDelPasado": 6966448,
   "totalesMismoMesAniosAnteriores": {
-    "2020": 2202891,
-    "2021": 2251159,
-    "2022": 4037992,
-    "2023": 4794483,
-    "2024": 6201975,
-    "2025": 6302099
+    "2020": 2405989,
+    "2021": 2849993,
+    "2022": 4069886,
+    "2023": 5227027,
+    "2024": 5681239,
+    "2025": 6538972
   }
 };
 const TAB_ANIO = {
   "anioActual": 2026,
-  "mesesIncluidos": 8,
-  "acumuladoAnioActual": 55280945,
+  "mesesIncluidos": 9,
+  "acumuladoAnioActual": 63836791,
   "acumuladoMismoRangoAniosAnteriores": {
-    "2020": 18418190,
-    "2021": 21482238,
-    "2022": 31635411,
-    "2023": 36647139,
-    "2024": 42998335,
-    "2025": 49979054
+    "2020": 20824179,
+    "2021": 24332231,
+    "2022": 35705297,
+    "2023": 41874166,
+    "2024": 48679574,
+    "2025": 56518026
   },
   "anioPasado": 2025,
   "totalAnioPasado": 73515515,
