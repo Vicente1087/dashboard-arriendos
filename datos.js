@@ -1,29 +1,25 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-10-02T17:41:26.120Z
+// Última actualización: 2026-10-03T16:00:00.485Z
 
-const ULTIMA_ACTUALIZACION = "2026-10-02T17:41:26.120Z";
+const ULTIMA_ACTUALIZACION = "2026-10-03T16:00:00.485Z";
 const TAB_MES = {
   "mesActual": "2026-10",
   "mesPasado": "2026-09",
   "mesAntesDelPasado": "2026-08",
   "actual": {
-    "total": 3700600,
-    "pagando": 8,
+    "total": 5569447,
+    "pagando": 12,
     "totalPropiedades": 22,
     "pendientes": [
       "Carmén Sylva 2315, Dpto 507",
       "Carmén Sylva 2850, Of. 3",
-      "11 de Septiembre 2909, Dpto 810",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
-      "Málaga 115, Of. 605",
-      "Madison Vitacura 2909, Of. 815 Estacionamiento 201",
       "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
       "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
       "Málaga 115, Of 710, Estacionamiento 31",
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
       "Bodega 4 Carmen Sylva 2315",
-      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
       "Málaga 115. Estacionamiento 143"
     ]
   },
