@@ -1,26 +1,21 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-10-04T16:41:15.983Z
+// Última actualización: 2026-10-06T18:08:55.864Z
 
-const ULTIMA_ACTUALIZACION = "2026-10-04T16:41:15.983Z";
+const ULTIMA_ACTUALIZACION = "2026-10-06T18:08:55.864Z";
 const TAB_MES = {
   "mesActual": "2026-10",
   "mesPasado": "2026-09",
   "mesAntesDelPasado": "2026-08",
   "actual": {
-    "total": 5569447,
-    "pagando": 12,
+    "total": 7163651,
+    "pagando": 17,
     "totalPropiedades": 22,
     "pendientes": [
-      "Carmén Sylva 2315, Dpto 507",
       "Carmén Sylva 2850, Of. 3",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
       "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
-      "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
-      "Málaga 115, Of 710, Estacionamiento 31",
       "La Dehesa 1201, Estacionamiento 298",
-      "La Dehesa 1201, Estacionamiento 299",
-      "Bodega 4 Carmen Sylva 2315",
-      "Málaga 115. Estacionamiento 143"
+      "La Dehesa 1201, Estacionamiento 299"
     ]
   },
   "pasado": {
@@ -48,7 +43,7 @@ const TAB_ANIO = {
     "2021": 24332231,
     "2022": 35705297,
     "2023": 41874166,
-    "2024": 48679574,
+    "2024": 48769574,
     "2025": 56518026
   },
   "anioPasado": 2025,
@@ -58,7 +53,7 @@ const TAB_ANIO = {
     "2021": 33704255,
     "2022": 47666624,
     "2023": 57470525,
-    "2024": 66520459,
+    "2024": 66610459,
     "2025": 73515515
   }
 };
