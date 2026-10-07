@@ -1,21 +1,18 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-10-06T18:08:55.864Z
+// Última actualización: 2026-10-07T18:42:15.404Z
 
-const ULTIMA_ACTUALIZACION = "2026-10-06T18:08:55.864Z";
+const ULTIMA_ACTUALIZACION = "2026-10-07T18:42:15.404Z";
 const TAB_MES = {
   "mesActual": "2026-10",
   "mesPasado": "2026-09",
   "mesAntesDelPasado": "2026-08",
   "actual": {
-    "total": 7163651,
-    "pagando": 17,
+    "total": 7941240,
+    "pagando": 20,
     "totalPropiedades": 22,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
-      "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
-      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16",
-      "La Dehesa 1201, Estacionamiento 298",
-      "La Dehesa 1201, Estacionamiento 299"
+      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16"
     ]
   },
   "pasado": {
