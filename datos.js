@@ -1,7 +1,7 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-10-08T20:06:32.964Z
+// Última actualización: 2026-10-08T20:11:35.247Z
 
-const ULTIMA_ACTUALIZACION = "2026-10-08T20:06:32.965Z";
+const ULTIMA_ACTUALIZACION = "2026-10-08T20:11:35.250Z";
 const TAB_MES = {
   "mesActual": "2026-10",
   "mesPasado": "2026-09",
@@ -18,7 +18,7 @@ const TAB_MES = {
   "pasado": {
     "total": 8555846,
     "pagando": 22,
-    "totalPropiedades": 23,
+    "totalPropiedades": 22,
     "pendientes": []
   },
   "totalMesAntesDelPasado": 6966448,

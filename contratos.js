@@ -28,9 +28,8 @@ const CONTRATOS = {
     driveContrato: "https://drive.google.com/file/d/1h-OngSQVezdVXpyTUWywkfFdIU8u8HcD/view?usp=drive_link",
   },
   "Callao 3600 Dpto 305 (Hendaya)": {
-    // Falta el alias banco (se agrega con la primera transferencia) y el link
-    // de Drive del contrato nuevo.
     arrendatario: "Lucas Vicente Ibacache Puelpan",
+    aliasCuenta: "LUCAS VICENTE IBACA",
     telefono: "+56 9 6727 8295",
     correo: "lucasvicente.ibacache@gmail.com",
     aval: "Pablo Nicolás Ibacache Puelpan",
@@ -38,6 +37,7 @@ const CONTRATOS = {
     montoUF: 12,
     notaMontoUF: "13 UF si se paga después del día 5 de cada mes",
     garantia: 493178,
+    driveContrato: "https://drive.google.com/file/d/1FuE4crRd_M0iQ4IePgQmLs41kbgq1_Kj/view?usp=sharing",
   },
   "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120": {
     arrendatario: "Patricio Rojas Rosales",

@@ -160,7 +160,10 @@ function procesarCSV(csvTexto, fechaReferencia, estadosManuales) {
       .filter((p) => !(p.propiedad in ESTADOS_MANUALES));
     const pendientes = filasArrendadas.filter((p) => p.estado === "vacante").map((p) => p.propiedad);
     const pagando = filasArrendadas.filter((p) => p.estado === "pagado").length;
-    return { total: totalMes(clave), pagando, totalPropiedades: filasArrendadas.length, pendientes };
+    // Una celda con texto explicativo ("Desocupado", etc.) significa que ese mes la
+    // propiedad no debía pagar, así que tampoco cuenta en el total esperado.
+    const totalPropiedades = filasArrendadas.filter((p) => p.estado !== "no-aplica").length;
+    return { total: totalMes(clave), pagando, totalPropiedades, pendientes };
   }
 
   const HOY = fechaReferencia || new Date();
