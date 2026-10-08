@@ -1,13 +1,13 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-10-07T18:42:15.404Z
+// Última actualización: 2026-10-08T18:40:34.565Z
 
-const ULTIMA_ACTUALIZACION = "2026-10-07T18:42:15.404Z";
+const ULTIMA_ACTUALIZACION = "2026-10-08T18:40:34.565Z";
 const TAB_MES = {
   "mesActual": "2026-10",
   "mesPasado": "2026-09",
   "mesAntesDelPasado": "2026-08",
   "actual": {
-    "total": 7941240,
+    "total": 8385100,
     "pagando": 20,
     "totalPropiedades": 22,
     "pendientes": [
@@ -99,8 +99,8 @@ const TAB_PROPIEDADES = [
   },
   {
     "propiedad": "Callao 3600 Dpto 305 (Hendaya)",
-    "arrendatario": "Elsa Patricia Arrigada y Macarena San Martin",
-    "garantiaRaw": "Pago 626.667",
+    "arrendatario": "",
+    "garantiaRaw": "493.178",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
