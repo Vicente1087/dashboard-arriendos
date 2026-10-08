@@ -1,46 +1,47 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-09-22T16:38:41.095Z
+// Última actualización: 2026-10-08T20:06:26.165Z
 
-const ULTIMA_ACTUALIZACION = "2026-09-22T16:38:41.095Z";
+const ULTIMA_ACTUALIZACION = "2026-10-08T20:06:26.168Z";
 const TAB_MES = {
-  "mesActual": "2026-09",
-  "mesPasado": "2026-08",
-  "mesAntesDelPasado": "2026-07",
+  "mesActual": "2026-10",
+  "mesPasado": "2026-09",
+  "mesAntesDelPasado": "2026-08",
   "actual": {
-    "total": 8268846,
+    "total": 8385100,
     "pagando": 21,
-    "totalPropiedades": 22,
+    "totalPropiedades": 23,
     "pendientes": [
-      "Carmén Sylva 2850, Of. 3"
+      "Carmén Sylva 2850, Of. 3",
+      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16"
     ]
   },
   "pasado": {
-    "total": 6966448,
-    "pagando": 20,
-    "totalPropiedades": 22,
+    "total": 8555846,
+    "pagando": 22,
+    "totalPropiedades": 23,
     "pendientes": []
   },
-  "totalMesAntesDelPasado": 6864444,
+  "totalMesAntesDelPasado": 6966448,
   "totalesMismoMesAniosAnteriores": {
-    "2020": 2202891,
-    "2021": 2251159,
-    "2022": 4037992,
-    "2023": 4794483,
-    "2024": 6201975,
-    "2025": 6302099
+    "2020": 2405989,
+    "2021": 2849993,
+    "2022": 4069886,
+    "2023": 5227027,
+    "2024": 5681239,
+    "2025": 6538972
   }
 };
 const TAB_ANIO = {
   "anioActual": 2026,
-  "mesesIncluidos": 8,
-  "acumuladoAnioActual": 55280945,
+  "mesesIncluidos": 9,
+  "acumuladoAnioActual": 63836791,
   "acumuladoMismoRangoAniosAnteriores": {
-    "2020": 18418190,
-    "2021": 21482238,
-    "2022": 31635411,
-    "2023": 36647139,
-    "2024": 42998335,
-    "2025": 49979054
+    "2020": 20824179,
+    "2021": 24332231,
+    "2022": 35705297,
+    "2023": 41874166,
+    "2024": 48769574,
+    "2025": 56518026
   },
   "anioPasado": 2025,
   "totalAnioPasado": 73515515,
@@ -49,7 +50,7 @@ const TAB_ANIO = {
     "2021": 33704255,
     "2022": 47666624,
     "2023": 57470525,
-    "2024": 66520459,
+    "2024": 66610459,
     "2025": 73515515
   }
 };
@@ -98,8 +99,8 @@ const TAB_PROPIEDADES = [
   },
   {
     "propiedad": "Callao 3600 Dpto 305 (Hendaya)",
-    "arrendatario": "Elsa Patricia Arrigada y Macarena San Martin",
-    "garantiaRaw": "Pago 626.667",
+    "arrendatario": "",
+    "garantiaRaw": "493.178",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
   },
