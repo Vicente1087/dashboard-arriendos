@@ -1,18 +1,17 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-10-09T18:11:20.634Z
+// Última actualización: 2026-10-10T17:10:23.559Z
 
-const ULTIMA_ACTUALIZACION = "2026-10-09T18:11:20.634Z";
+const ULTIMA_ACTUALIZACION = "2026-10-10T17:10:23.559Z";
 const TAB_MES = {
   "mesActual": "2026-10",
   "mesPasado": "2026-09",
   "mesAntesDelPasado": "2026-08",
   "actual": {
-    "total": 8385100,
-    "pagando": 21,
+    "total": 9626766,
+    "pagando": 22,
     "totalPropiedades": 23,
     "pendientes": [
-      "Carmén Sylva 2850, Of. 3",
-      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16"
+      "Carmén Sylva 2850, Of. 3"
     ]
   },
   "pasado": {
