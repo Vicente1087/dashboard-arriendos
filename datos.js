@@ -1,27 +1,21 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-11-01T17:47:50.968Z
+// Última actualización: 2026-11-02T21:34:40.409Z
 
-const ULTIMA_ACTUALIZACION = "2026-11-01T17:47:50.968Z";
+const ULTIMA_ACTUALIZACION = "2026-11-02T21:34:40.409Z";
 const TAB_MES = {
   "mesActual": "2026-11",
   "mesPasado": "2026-10",
   "mesAntesDelPasado": "2026-09",
   "actual": {
-    "total": 3448397,
-    "pagando": 5,
+    "total": 6007307,
+    "pagando": 11,
     "totalPropiedades": 23,
     "pendientes": [
-      "Carmén Sylva 2315, Dpto 507",
       "Carmén Sylva 2850, Of. 3",
       "11 de Septiembre 2909, Dpto 810",
-      "Callao 3600 Dpto 405 (Hendaya)",
       "Callao 3600 Dpto 305 (Hendaya)",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
-      "Málaga 115, Of. 605",
-      "Madison Vitacura 2909, Of. 815 Estacionamiento 201",
-      "Versalles 3036, Estacionamiento 19",
       "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
-      "San Sebastian 2967, Dpto 1202 (Bd55 y Bx18)",
       "Málaga 115, Of 710, Estacionamiento 31",
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
@@ -32,12 +26,10 @@ const TAB_MES = {
     ]
   },
   "pasado": {
-    "total": 9626766,
-    "pagando": 22,
+    "total": 9914284,
+    "pagando": 23,
     "totalPropiedades": 23,
-    "pendientes": [
-      "Carmén Sylva 2850, Of. 3"
-    ]
+    "pendientes": []
   },
   "totalMesAntesDelPasado": 8555846,
   "totalesMismoMesAniosAnteriores": {
@@ -52,7 +44,7 @@ const TAB_MES = {
 const TAB_ANIO = {
   "anioActual": 2026,
   "mesesIncluidos": 10,
-  "acumuladoAnioActual": 73463557,
+  "acumuladoAnioActual": 73751075,
   "acumuladoMismoRangoAniosAnteriores": {
     "2020": 22931241,
     "2021": 27457127,
