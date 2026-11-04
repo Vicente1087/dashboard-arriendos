@@ -1,28 +1,24 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-11-03T19:18:09.515Z
+// Última actualización: 2026-11-04T19:35:04.498Z
 
-const ULTIMA_ACTUALIZACION = "2026-11-03T19:18:09.515Z";
+const ULTIMA_ACTUALIZACION = "2026-11-04T19:35:04.498Z";
 const TAB_MES = {
   "mesActual": "2026-11",
   "mesPasado": "2026-10",
   "mesAntesDelPasado": "2026-09",
   "actual": {
-    "total": 6007307,
-    "pagando": 11,
+    "total": 7114774,
+    "pagando": 15,
     "totalPropiedades": 23,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
-      "11 de Septiembre 2909, Dpto 810",
-      "Callao 3600 Dpto 305 (Hendaya)",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
       "Callao/Vecinal 2970, Of. 318 + Estacionamiento 161",
       "Málaga 115, Of 710, Estacionamiento 31",
       "La Dehesa 1201, Estacionamiento 298",
       "La Dehesa 1201, Estacionamiento 299",
-      "Estacionamiento 6 Carmen Sylva",
       "Bodega 4 Carmen Sylva 2315",
-      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9",
-      "Málaga 115. Estacionamiento 143"
+      "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9"
     ]
   },
   "pasado": {
@@ -109,7 +105,7 @@ const TAB_PROPIEDADES = [
   },
   {
     "propiedad": "Callao 3600 Dpto 305 (Hendaya)",
-    "arrendatario": "",
+    "arrendatario": "Lucas Ibacache",
     "garantiaRaw": "493.178",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"
