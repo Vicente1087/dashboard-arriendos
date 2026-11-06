@@ -1,19 +1,18 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-11-05T19:44:06.112Z
+// Última actualización: 2026-11-06T19:07:06.466Z
 
-const ULTIMA_ACTUALIZACION = "2026-11-05T19:44:06.112Z";
+const ULTIMA_ACTUALIZACION = "2026-11-06T19:07:06.466Z";
 const TAB_MES = {
   "mesActual": "2026-11",
   "mesPasado": "2026-10",
   "mesAntesDelPasado": "2026-09",
   "actual": {
-    "total": 8291124,
-    "pagando": 19,
+    "total": 8344824,
+    "pagando": 20,
     "totalPropiedades": 23,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
       "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120",
-      "Bodega 4 Carmen Sylva 2315",
       "Dante 4200, Dpto 707, Estacionamiento 12, Bodega 9"
     ]
   },
