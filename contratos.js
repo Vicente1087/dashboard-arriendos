@@ -67,6 +67,7 @@ const CONTRATOS = {
     telefono: "+56 9 8147 7264",
     correo: "carloscontrerasoyarce@gmail.com",
     vencimientoContrato: "2026-12-30",
+    noRenueva: "Avisó el 17/11/2026 que no renueva; entrega a más tardar el 30/12",
     montoUF: 2.02,
     garantia: 80000,
     driveContrato: "https://drive.google.com/file/d/13-DwCTBzIfM7PyugN_4A1KPo8hu3DWgR/view?usp=sharing",

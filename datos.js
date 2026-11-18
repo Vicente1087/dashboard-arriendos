@@ -1,47 +1,47 @@
 // Archivo generado automáticamente por actualizar-datos.js — no editar a mano.
-// Última actualización: 2026-10-08T20:11:35.247Z
+// Última actualización: 2026-11-18T08:39:23.990Z
 
-const ULTIMA_ACTUALIZACION = "2026-10-08T20:11:35.250Z";
+const ULTIMA_ACTUALIZACION = "2026-11-18T08:39:23.992Z";
 const TAB_MES = {
-  "mesActual": "2026-10",
-  "mesPasado": "2026-09",
-  "mesAntesDelPasado": "2026-08",
+  "mesActual": "2026-11",
+  "mesPasado": "2026-10",
+  "mesAntesDelPasado": "2026-09",
   "actual": {
-    "total": 8385100,
+    "total": 9170414,
     "pagando": 21,
     "totalPropiedades": 23,
     "pendientes": [
       "Carmén Sylva 2850, Of. 3",
-      "Las Condes 13800 - San José 23, Dpto 1504, Estacionamiento 155-156, Bodega 16"
+      "Callao/Vecinal 2970, Of. 903 + Estacionamiento 120"
     ]
   },
   "pasado": {
-    "total": 8555846,
-    "pagando": 22,
-    "totalPropiedades": 22,
+    "total": 9914284,
+    "pagando": 23,
+    "totalPropiedades": 23,
     "pendientes": []
   },
-  "totalMesAntesDelPasado": 6966448,
+  "totalMesAntesDelPasado": 8555846,
   "totalesMismoMesAniosAnteriores": {
-    "2020": 2405989,
-    "2021": 2849993,
-    "2022": 4069886,
-    "2023": 5227027,
-    "2024": 5681239,
-    "2025": 6538972
+    "2020": 2107062,
+    "2021": 3124896,
+    "2022": 3969198,
+    "2023": 5250398,
+    "2024": 5709754,
+    "2025": 5747909
   }
 };
 const TAB_ANIO = {
   "anioActual": 2026,
-  "mesesIncluidos": 9,
-  "acumuladoAnioActual": 63836791,
+  "mesesIncluidos": 10,
+  "acumuladoAnioActual": 73751075,
   "acumuladoMismoRangoAniosAnteriores": {
-    "2020": 20824179,
-    "2021": 24332231,
-    "2022": 35705297,
-    "2023": 41874166,
-    "2024": 48769574,
-    "2025": 56518026
+    "2020": 22931241,
+    "2021": 27457127,
+    "2022": 39674495,
+    "2023": 47124564,
+    "2024": 54479328,
+    "2025": 62265935
   },
   "anioPasado": 2025,
   "totalAnioPasado": 73515515,
@@ -99,7 +99,7 @@ const TAB_PROPIEDADES = [
   },
   {
     "propiedad": "Callao 3600 Dpto 305 (Hendaya)",
-    "arrendatario": "",
+    "arrendatario": "Lucas Ibacache",
     "garantiaRaw": "493.178",
     "vencimientoContrato": "En construcción",
     "montoUF": "En construcción"

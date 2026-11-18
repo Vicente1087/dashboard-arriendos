@@ -144,7 +144,13 @@ function celdaArrendatario(nombre, contrato) {
   return `<span class="con-tooltip" tabindex="0">${nombre}<span class="tooltip-caja">${datos}</span></span>`;
 }
 
-function celdaVencimiento(vencimientoISO) {
+function celdaVencimiento(contrato) {
+  const html = textoVencimiento(contrato && contrato.vencimientoContrato);
+  if (!contrato || !contrato.noRenueva) return html;
+  return `<span class="con-tooltip" tabindex="0">${html} <span class="badge-no-renueva">No renueva</span><span class="tooltip-caja">${contrato.noRenueva}</span></span>`;
+}
+
+function textoVencimiento(vencimientoISO) {
   if (!vencimientoISO) return `<span class="dato-faltante">Falta info</span>`;
   const hoy = new Date();
   const fechaVencimiento = new Date(vencimientoISO + "T00:00:00");
@@ -301,7 +307,7 @@ function pintarTabPropiedades() {
       <tr class="${claseFila(categoria, contrato)}">
         <td>${p.propiedad}</td>
         <td>${celdaArrendatario(arrendatario, contrato)}</td>
-        <td>${celdaVencimiento(contrato && contrato.vencimientoContrato)}</td>
+        <td>${celdaVencimiento(contrato)}</td>
         <td>${(contrato && contrato.aliasCuenta) || `<span class="dato-faltante">Falta info</span>`}</td>
         <td>${celdaMontoUF(contrato)}</td>
         <td>${celdaGarantia(contrato, p.garantiaRaw)}</td>

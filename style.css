@@ -390,6 +390,15 @@ tr.fila-vencido { background: #d7f0ec; }
   opacity: 1;
 }
 
+.badge-no-renueva {
+  background: #fde8e8;
+  color: #c94a4a;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+}
+
 .vencimiento-ok {
   color: #1f2933;
 }
