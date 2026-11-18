@@ -68,6 +68,7 @@ const CONTRATOS = {
     correo: "carloscontrerasoyarce@gmail.com",
     vencimientoContrato: "2026-12-30",
     noRenueva: "Avisó el 17/11/2026 que no renueva; entrega a más tardar el 30/12",
+    desocupadaDesde: "2027-01-01",
     montoUF: 2.02,
     garantia: 80000,
     driveContrato: "https://drive.google.com/file/d/13-DwCTBzIfM7PyugN_4A1KPo8hu3DWgR/view?usp=sharing",
@@ -173,6 +174,15 @@ const CONTRATOS = {
   },
 };
 
+// ESTADOS + las propiedades cuya ficha trae "desocupadaDesde" y esa fecha ya llegó.
+function estadosVigentes(hoy = new Date()) {
+  const estados = { ...ESTADOS };
+  for (const [propiedad, c] of Object.entries(CONTRATOS)) {
+    if (c.desocupadaDesde && hoy >= new Date(c.desocupadaDesde + "T00:00:00")) estados[propiedad] = "vacante";
+  }
+  return estados;
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { CONTRATOS, ESTADOS };
+  module.exports = { CONTRATOS, ESTADOS, estadosVigentes };
 }

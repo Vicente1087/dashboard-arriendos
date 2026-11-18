@@ -232,7 +232,7 @@ function pintarDonaEstados() {
   const contenedor = document.getElementById("dona-estados");
   if (!contenedor) return;
   const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
-  const ESTADOS_LOCAL = typeof ESTADOS !== "undefined" ? ESTADOS : {};
+  const ESTADOS_LOCAL = typeof estadosVigentes === "function" ? estadosVigentes() : {};
 
   const conteo = {};
   for (const p of estado.TAB_PROPIEDADES) {
@@ -281,7 +281,7 @@ const ETIQUETA_CATEGORIA = {
 function pintarTabPropiedades() {
   pintarDonaEstados();
   const CONTRATOS_LOCAL = typeof CONTRATOS !== "undefined" ? CONTRATOS : {};
-  const ESTADOS_LOCAL = typeof ESTADOS !== "undefined" ? ESTADOS : {};
+  const ESTADOS_LOCAL = typeof estadosVigentes === "function" ? estadosVigentes() : {};
   const tbody = document.getElementById("tabla-propiedades");
   tbody.innerHTML = estado.TAB_PROPIEDADES.map((p) => {
     const contrato = CONTRATOS_LOCAL[p.propiedad];
@@ -346,7 +346,7 @@ function activarBotonActualizar() {
       const res = await fetch(CSV_URL, { cache: "no-store" });
       if (!res.ok) throw new Error(`El Google Sheet respondió con error ${res.status}`);
       const csvTexto = await res.text();
-      const { TAB_MES, TAB_ANIO, TAB_PROPIEDADES } = procesarCSV(csvTexto, undefined, typeof ESTADOS !== "undefined" ? ESTADOS : {});
+      const { TAB_MES, TAB_ANIO, TAB_PROPIEDADES } = procesarCSV(csvTexto, undefined, typeof estadosVigentes === "function" ? estadosVigentes() : {});
       estado = { TAB_MES, TAB_ANIO, TAB_PROPIEDADES, ultimaActualizacion: new Date().toISOString() };
       pintarTodo();
       boton.textContent = textoOriginal;
